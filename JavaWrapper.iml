@@ -10,11 +10,10 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="file://$USER_HOME$/AppData/Local/Temp/JMF-2.1.1e/lib" />
+          <root url="jar://$MODULE_DIR$/../jmf-2.1.1e.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$USER_HOME$/AppData/Local/Temp/JMF-2.1.1e/lib" recursive="false" />
       </library>
     </orderEntry>
   </component>

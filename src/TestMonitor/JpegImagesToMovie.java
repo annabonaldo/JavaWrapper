@@ -1,4 +1,4 @@
-/**
+package TestMonitor; /**
  * Created by Anna Bonaldo on 14/01/2018.
  */
 
@@ -15,8 +15,10 @@ import javax.media.format.VideoFormat;
 
 public class JpegImagesToMovie implements ControllerListener, DataSinkListener {
 
-    public boolean doIt(int width, int height, int frameRate, Vector inFiles, MediaLocator outML) {
-        ImageDataSource ids = new ImageDataSource(width, height, frameRate, inFiles);
+    public boolean doIt(Vector inFiles, MediaLocator outML) {
+
+        ImageDataSource ids = new ImageDataSource
+                (Settings.get_width(), Settings.get_height(), Settings.get_frameRate(), inFiles);
 
         Processor p;
 
@@ -210,6 +212,11 @@ public class JpegImagesToMovie implements ControllerListener, DataSinkListener {
         Vector inputFiles = new Vector();
         String outputURL = null;
 
+        File folder = new File(Settings.get_ScreenImgsDir());
+
+        for (File img:folder.listFiles()) {
+            inputFiles.addElement(img.getAbsolutePath());
+        }
 
 
 
@@ -238,10 +245,10 @@ public class JpegImagesToMovie implements ControllerListener, DataSinkListener {
                 i++;
                 if (i >= args.length)
                     prUsage();
-                outputURL = args[i];
+                outputURL = Settings.get_ScreenMovFile();
                 System.out.println("outputURL: "+outputURL);
             } else {
-                inputFiles.addElement(args[i]);
+               // inputFiles.addElement(args[i]);
             }
             i++;
         }
@@ -275,13 +282,13 @@ public class JpegImagesToMovie implements ControllerListener, DataSinkListener {
         }
 
         JpegImagesToMovie imageToMovie = new JpegImagesToMovie();
-        imageToMovie.doIt(width, height, frameRate, inputFiles, oml);
+        imageToMovie.doIt(inputFiles, oml);
 
         System.exit(0);
     }
 
     static void prUsage() {
-        System.err.println("Usage: java JpegImagesToMovie -w <width> -h <height> -f <frame rate> -o <output URL> <input JPEG file 1> <input JPEG file 2> ...");
+        System.err.println("Usage: java TestMonitor.JpegImagesToMovie -w <width> -h <height> -f <frame rate> -o <output URL> <input JPEG file 1> <input JPEG file 2> ...");
         System.exit(-1);
     }
 

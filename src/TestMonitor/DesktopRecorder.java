@@ -8,42 +8,26 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.concurrent.atomic.AtomicBoolean;
 
-public class DesktopRecorder implements Runnable{
+public class DesktopRecorder extends Monitor{
 
     int _waitMilliSec;
     Rectangle _screen;
-    AtomicBoolean _stop;
     long _pictureID= 0;
     String _path;
+    Robot robot;
 
-    DesktopRecorder()
+    public DesktopRecorder()
     {
+        super();
         // frame per second = 1000 ms(= 1 sec) / num frame per second
-        _waitMilliSec = 1000 / Settings.get_frameRate();
-        _screen =  new Rectangle(Settings.get_height(), Settings.get_width());
-        _path = Settings.get_ScreenImgsDir();
-    }
-
-    @Override
-    public void run() {
-        Robot robot = null;
+     //   _waitMilliSec = 1000 / Settings.get_frameRate();
+   //    _screen =  new Rectangle(Settings.get_height(), Settings.get_width());
+   //     _path = Settings.get_ScreenImgsDir();
         try {
             robot = new Robot();
         } catch (AWTException e) {
             e.printStackTrace();
-        }
-        while(!_stop.get()) {
-            BufferedImage screenCapture = robot.createScreenCapture(_screen);
-            Long startTime = System.currentTimeMillis();
-            try {
-                save_picture(screenCapture);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            Long duration = startTime - System.currentTimeMillis();
-            robot.delay(_waitMilliSec- duration.intValue());
         }
     }
 
@@ -53,8 +37,28 @@ public class DesktopRecorder implements Runnable{
 
     }
 
-    public void stop_recording()
-    {
-        _stop.set(true);
+    @Override
+    void PreRunOperations() {
+
     }
+
+    @Override
+    void PostRunOperations() {
+
+    }
+
+    @Override
+    void CollectData(){
+        BufferedImage screenCapture = robot.createScreenCapture(_screen);
+        Long startTime = System.currentTimeMillis();
+        try {
+            save_picture(screenCapture);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Long duration = startTime - System.currentTimeMillis();
+        robot.delay(_waitMilliSec- duration.intValue());
+
+    }
+
 }

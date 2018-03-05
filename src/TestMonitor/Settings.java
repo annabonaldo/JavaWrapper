@@ -40,7 +40,11 @@ public class Settings {
     static final String _IMGDIR = "IMGDIR";
     static final String _SCREENMOVOUT = "SCREENMOVOUT";
 
+    public static long getMOUSEStatsWindows() {
+        return MOUSEStatsWindows;
+    }
 
+    static final long  MOUSEStatsWindows  = 20;
 
     Settings()
     {
@@ -50,18 +54,11 @@ public class Settings {
     {
         try {
         BufferedReader br = new BufferedReader(new FileReader("file.txt"));
-
-           // StringBuilder sb = new StringBuilder();
             String line = br.readLine();
-
             while (line != null) {
-                //sb.append(line);
-               // sb.append(System.lineSeparator());
                 line = br.readLine();
                 ParseLine(line);
             }
-            //String everything = sb.toString();
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

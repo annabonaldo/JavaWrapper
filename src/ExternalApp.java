@@ -14,7 +14,7 @@ public class ExternalApp {
     public static void main(String args[]) {
         try{
            // String[] cmdArray = new String[]{"C:\\Program Files (x86)\\Scratch 2\\Scratch 2.exe\\  "};
-            showFrame();
+          //  showFrame();
             String[] cmdArray = new String[]{"C:\\Users\\Anna Bonaldo\\Desktop\\scratch_start.bat"};
             Runtime.getRuntime().exec(cmdArray);
 
@@ -30,7 +30,7 @@ public class ExternalApp {
 
 
 
-    public static void showFrame() {
+   /* public static void showFrame() {
 
         final JFrame frame = new JFrame("Display Mode");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -58,5 +58,5 @@ public class ExternalApp {
 
         frame.pack();
         frame.setVisible(true);
-    }
+    }*/
 }

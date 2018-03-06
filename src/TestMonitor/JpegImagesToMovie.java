@@ -2,6 +2,8 @@ package TestMonitor; /**
  * Created by Anna Bonaldo on 14/01/2018.
  */
 
+import Application.Settings;
+
 import java.io.*;
 import java.util.*;
 import java.awt.Dimension;
@@ -212,7 +214,7 @@ public class JpegImagesToMovie implements ControllerListener, DataSinkListener {
         Vector inputFiles = new Vector();
         String outputURL = null;
 
-        File folder = new File(Settings.get_ScreenImgsDir());
+        File folder = new File(Settings.IMG_FOLDER);
 
         for (File img:folder.listFiles()) {
             inputFiles.addElement(img.getAbsolutePath());
@@ -245,7 +247,7 @@ public class JpegImagesToMovie implements ControllerListener, DataSinkListener {
                 i++;
                 if (i >= args.length)
                     prUsage();
-                outputURL = Settings.get_ScreenMovFile();
+                outputURL = Settings.ReportPath()+Settings.SEP+Settings.DESKTOP_REC_FILE;
                 System.out.println("outputURL: "+outputURL);
             } else {
                // inputFiles.addElement(args[i]);

@@ -1,5 +1,7 @@
 package TestMonitor;
 
+import Application.Settings;
+
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**

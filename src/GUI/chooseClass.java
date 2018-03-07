@@ -10,14 +10,15 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class chooseClass extends JDialog {
+    private AppGUI parentAppGUI;
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
     private JList classesList;
 
-    static private chooseClass dialog;
 
-    public chooseClass() {
+    public chooseClass(AppGUI parent) {
+        parentAppGUI = parent;
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -51,20 +52,19 @@ public class chooseClass extends JDialog {
     }
 
     private void onOK() {
-        DatabaseManager.SetClass(dialog.classesList.getSelectedValue().toString());
-       // AppGUI.UpdateStartIfEnabled();
-        dispose();
+
+      //  dispose();
     }
 
     private void onCancel() {
-        dispose();
+      //  dispose();
     }
 
-    public static void showClassDialog() throws IOException {
+    public void showClassDialog() throws IOException {
 
         HashMap<String, String> classesMAP = new HashMap<>();
 
-        File dir = new File(Settings.DBPath());
+        File dir = new File(Settings.Path(Settings.DIR.DIR_DatabaseClassi));
         File[] files = dir.listFiles();
         for (File file : files) {
             if (file.isDirectory()) {
@@ -76,10 +76,9 @@ public class chooseClass extends JDialog {
         DefaultListModel<String> model = new DefaultListModel<>();
         classesMAP.keySet().forEach(model::addElement);
 
-        dialog = new chooseClass();
-        dialog.classesList.setModel(model);
-        dialog.pack();
-        dialog.setVisible(true);
+      //  parentAppGUI.dialogChooseClass.classesList.setModel(model);
+     //   parentAppGUI.dialogChooseClass.pack();
+    //    parentAppGUI.dialogChooseClass.setVisible(true);
         System.exit(0);
     }
 }

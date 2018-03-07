@@ -13,22 +13,24 @@ public class DatabaseManager {
 
 
     static public String ClassID(){ return schoolClass._classID; }
-    static public ArrayList<String> StudentsList(String classId)
+    static public ArrayList<String> StudentsList()
     {
-
-
         return schoolClass.Students();
     }
 
     static  public void SetClass(String classFolder)
     {
-      DatabaseManager.schoolClass = new SchoolClass(classFolder);
+        System.out.println("classFolder "+classFolder);
+        DatabaseManager.schoolClass = new SchoolClass(classFolder);
+        DatabaseManager.studentId = -1;
     }
     static public void SetStudentId(int id){DatabaseManager.studentId =id; }
-    public static boolean ParametersOk(){
-        return (schoolClass != null) &&
-                (schoolClass._classID != null) &&
-                (schoolClass.Students()!= null) &&
-                (studentId > 0);
+
+    public static boolean HasClass() {
+        return (schoolClass != null) && (schoolClass._classID != null);
+    }
+
+    public static boolean HasStudent() {
+        return (studentId >= 0);
     }
 }

@@ -2,22 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be8ecf7d-d6fc-4da5-9e65-cdd6a313cb5f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Settings.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUI/chooseClass.form" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUI/chooseClass.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUI/chooseStudent.form" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUI/chooseStudent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TestMonitor/ExteralProcessController.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/TestMonitor/MouseMonitor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/TestMonitor/Settings.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUI/chooseClassAlert.form" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUI/chooseClassAlert.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUI/chooseStudentAlert.form" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUI/chooseStudentAlert.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.java" afterPath="$PROJECT_DIR$/src/App.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/DatabaseManager.java" afterPath="$PROJECT_DIR$/src/Application/DatabaseManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/SchoolClass.java" afterPath="$PROJECT_DIR$/src/Application/SchoolClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/Settings.java" afterPath="$PROJECT_DIR$/src/Application/Settings.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/AppGUI.form" afterPath="$PROJECT_DIR$/src/GUI/AppGUI.form" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/AppGUI.java" afterPath="$PROJECT_DIR$/src/GUI/AppGUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/chooseClass.java" afterPath="$PROJECT_DIR$/src/GUI/chooseClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/chooseStudent.java" afterPath="$PROJECT_DIR$/src/GUI/chooseStudent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestMonitor/JpegImagesToMovie.java" afterPath="$PROJECT_DIR$/src/TestMonitor/JpegImagesToMovie.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestMonitor/Monitor.java" afterPath="$PROJECT_DIR$/src/TestMonitor/Monitor.java" />
     </list>
     <ignored path="JavaWrapper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,6 +31,13 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="JavaWrapper" />
@@ -43,8 +47,8 @@
       <file leaf-file-name="AppGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/AppGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+            <state relative-caret-position="-726">
+              <caret line="73" column="5" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,10 +59,13 @@
       <file leaf-file-name="DatabaseManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application/DatabaseManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="14" column="30" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="32" />
+            <state relative-caret-position="95">
+              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#387#388#0" expanded="true" />
+                <element signature="e#854#855#0" expanded="true" />
+                <element signature="e#893#894#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -67,8 +74,8 @@
       <file leaf-file-name="GUIManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/GUIManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="42" column="13" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="13" />
+            <state relative-caret-position="263">
+              <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <marker date="1520266076254" expanded="false" signature="1003:1022" placeholder=" { " />
@@ -78,23 +85,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppGUI.form" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/AppGUI.form">
-          <provider selected="true" editor-type-id="ui-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SchoolClass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application/SchoolClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+            <state relative-caret-position="571">
+              <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#ReadClass#0;class#SchoolClass#0" expanded="false" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppGUI.form" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GUI/AppGUI.form">
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -108,34 +114,25 @@
       <file leaf-file-name="chooseClass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/chooseClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
-              <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+            <state relative-caret-position="583">
+              <caret line="81" column="23" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="23" />
               <folding>
-                <element signature="method#chooseClass#0;class#chooseClass#0" expanded="false" />
-                <element signature="e#836#837#0" expanded="true" />
-                <element signature="e#878#879#0" expanded="true" />
-                <element signature="e#1090#1091#0" expanded="true" />
-                <element signature="e#1132#1133#0" expanded="true" />
-                <element signature="e#1659#1660#0" expanded="true" />
-                <element signature="e#1684#1685#0" expanded="true" />
-                <element signature="method#showClassDialog#0;class#chooseClass#0" expanded="false" />
+                <element signature="e#1128#1129#0" expanded="true" />
+                <element signature="e#1170#1171#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chooseStudent.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="chooseStudent.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/chooseStudent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-433">
-              <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+            <state relative-caret-position="-22">
+              <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
               <folding>
-                <element signature="e#575#576#0" expanded="true" />
-                <element signature="e#613#614#0" expanded="true" />
-                <element signature="e#745#746#0" expanded="true" />
-                <element signature="e#787#788#0" expanded="true" />
-                <element signature="e#1555#1556#0" expanded="true" />
-                <element signature="e#1580#1581#0" expanded="true" />
+                <element signature="method#chooseStudent#0;class#chooseStudent#0" expanded="false" />
+                <element signature="e#620#621#0" expanded="true" />
+                <element signature="e#658#659#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -144,26 +141,15 @@
       <file leaf-file-name="Settings.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application/Settings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="81" column="38" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="38" />
+            <state relative-caret-position="393">
+              <caret line="147" column="44" selection-start-line="147" selection-start-column="44" selection-end-line="147" selection-end-column="44" />
               <folding>
-                <element signature="e#1618#1619#0" expanded="true" />
-                <element signature="e#1680#1681#0" expanded="true" />
-                <element signature="method#Settings#0;class#Settings#0" expanded="false" />
-                <element signature="method#ReportPath#0;class#Settings#0" expanded="false" />
+                <element signature="e#2307#2308#0" expanded="true" />
+                <element signature="e#2353#2354#0" expanded="true" />
+                <element signature="method#Path#1;class#Settings#0" expanded="false" />
+                <element signature="method#readSettings#0;class#Settings#0" expanded="false" />
                 <element signature="method#ParseLine#0;class#Settings#0" expanded="false" />
-                <element signature="method#get_CleanValue#0;class#Settings#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SessionControl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Application/SessionControl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -215,12 +201,13 @@
         <option value="$PROJECT_DIR$/src/TestMonitor/Settings.java" />
         <option value="$PROJECT_DIR$/src/TestMonitor/JpegImagesToMovie.java" />
         <option value="$PROJECT_DIR$/src/Application/Settings.java" />
+        <option value="$PROJECT_DIR$/src/GUI/chooseClassAlert.java" />
         <option value="$PROJECT_DIR$/src/Application/SchoolClass.java" />
-        <option value="$PROJECT_DIR$/src/GUI/AppGUI.form" />
-        <option value="$PROJECT_DIR$/src/Application/DatabaseManager.java" />
-        <option value="$PROJECT_DIR$/src/GUI/AppGUI.java" />
         <option value="$PROJECT_DIR$/src/GUI/chooseClass.java" />
         <option value="$PROJECT_DIR$/src/GUI/chooseStudent.java" />
+        <option value="$PROJECT_DIR$/src/Application/DatabaseManager.java" />
+        <option value="$PROJECT_DIR$/src/GUI/AppGUI.java" />
+        <option value="$PROJECT_DIR$/src/GUI/AppGUI.form" />
       </list>
     </option>
   </component>
@@ -230,8 +217,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-4" />
-    <option name="y" value="12" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="754" />
   </component>
@@ -260,6 +247,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -309,32 +298,6 @@
               <option name="myItemId" value="GUI" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chooseStudent" />
-              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaWrapper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaWrapper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chooseClass" />
-              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -372,24 +335,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaWrapper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaWrapper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -397,8 +342,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -905,11 +848,12 @@
       <workItem from="1520259624625" duration="10307000" />
       <workItem from="1520325622056" duration="5893000" />
       <workItem from="1520336542186" duration="14031000" />
+      <workItem from="1520411867417" duration="8295000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57589000" />
+    <option name="totallyTimeSpent" value="65884000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -921,7 +865,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="12" width="1382" height="754" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -931,12 +875,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.53479576" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5410628" sideWeight="0.48184568" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5394525" sideWeight="0.48184568" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20726173" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21028744" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32206118" sideWeight="0.4969743" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -989,15 +933,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/chooseClass.java</url>
-          <line>47</line>
-          <properties />
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="17" />
+      <option name="time" value="28" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1006,69 +942,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Application/Settings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#ParseLine#0;class#Settings#0" expanded="false" />
-            <element signature="method#get_CleanValue#0;class#Settings#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClickCounter.java" />
-    <entry file="file://$PROJECT_DIR$/src/TestMonitor/JpegImagesToMovie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6468">
-          <caret line="390" column="9" selection-start-line="390" selection-start-column="9" selection-end-line="392" selection-end-column="11" />
-          <folding>
-            <element signature="method#doIt#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="e#1029#1085#0" expanded="false" />
-            <element signature="e#1468#1517#0" expanded="false" />
-            <element signature="e#1950#2008#0" expanded="false" />
-            <element signature="method#createDataSink#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="docComment;method#waitForState#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="docComment;method#controllerUpdate#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="method#controllerUpdate#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="docComment;method#waitForFileDone#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="method#waitForFileDone#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="docComment;method#dataSinkUpdate#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="method#dataSinkUpdate#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="method#prUsage#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="docComment;method#createMediaLocator#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="method#createMediaLocator#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="docComment;class#ImageDataSource#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="class#ImageDataSource#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="method#ImageDataSource#0;class#ImageDataSource#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="method#setLocator#0;class#ImageDataSource#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="docComment;method#getContentType#0;class#ImageDataSource#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="method#connect#0;class#ImageDataSource#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="method#disconnect#0;class#ImageDataSource#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="method#start#0;class#ImageDataSource#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="method#stop#0;class#ImageDataSource#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="docComment;method#getStreams#0;class#ImageDataSource#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="docComment;method#getDuration#0;class#ImageDataSource#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="docComment;class#ImageSourceStream#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="class#ImageSourceStream#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="method#ImageSourceStream#0;class#ImageSourceStream#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="docComment;method#willReadBlock#0;class#ImageSourceStream#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="docComment;method#read#0;class#ImageSourceStream#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="method#read#0;class#ImageSourceStream#0;class#JpegImagesToMovie#0" expanded="false" />
-            <element signature="docComment;method#getFormat#0;class#ImageSourceStream#0;class#JpegImagesToMovie#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/ExternalApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="20" column="24" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ClickCounter.java" />
     <entry file="file://$PROJECT_DIR$/src/TestMonitor/JpegImagesToMovie.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1251,18 +1124,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/JavaWrapper.java" />
-    <entry file="file://$PROJECT_DIR$/src/Application/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#Student#0;class#Student#0" expanded="false" />
-            <element signature="method#Student#1;class#Student#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/Session.java" />
     <entry file="file://$PROJECT_DIR$/src/GUI/Session.form" />
     <entry file="file://$PROJECT_DIR$/src/ExternalApp.java">
@@ -1281,21 +1142,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#CollectData#0;class#DesktopRecorder#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TestMonitor/MouseMonitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TestMonitor/MouseMonitor.java" />
     <entry file="file://$PROJECT_DIR$/src/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="439">
@@ -1348,10 +1198,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="1785" column="43" selection-start-line="1785" selection-start-column="22" selection-end-line="1785" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/SessionControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/chooseStudentAlert.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/chooseStudentAlert.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/TestMonitor/JpegImagesToMovie.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-179">
-          <caret line="247" column="37" selection-start-line="247" selection-start-column="37" selection-end-line="247" selection-end-column="37" />
+        <state relative-caret-position="121">
+          <caret line="249" column="92" selection-start-line="249" selection-start-column="92" selection-end-line="249" selection-end-column="92" />
           <folding>
             <element signature="method#doIt#0;class#JpegImagesToMovie#0" expanded="false" />
             <element signature="e#1029#1085#0" expanded="false" />
@@ -1390,78 +1268,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/chooseClass.form">
+    <entry file="file://$PROJECT_DIR$/src/GUI/chooseClassAlert.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/Class.java">
+    <entry file="file://$PROJECT_DIR$/src/Application/Student.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="1785" column="43" selection-start-line="1785" selection-start-column="22" selection-end-line="1785" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/SessionControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AppGUI.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/SchoolClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        <state relative-caret-position="329">
+          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#ReadClass#0;class#SchoolClass#0" expanded="false" />
+            <element signature="method#Student#0;class#Student#0" expanded="false" />
+            <element signature="method#Student#1;class#Student#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/DatabaseManager.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI/chooseClassAlert.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="176">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/Settings.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="81" column="38" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="38" />
+        <state relative-caret-position="393">
+          <caret line="147" column="44" selection-start-line="147" selection-start-column="44" selection-end-line="147" selection-end-column="44" />
           <folding>
-            <element signature="e#1618#1619#0" expanded="true" />
-            <element signature="e#1680#1681#0" expanded="true" />
-            <element signature="method#Settings#0;class#Settings#0" expanded="false" />
-            <element signature="method#ReportPath#0;class#Settings#0" expanded="false" />
+            <element signature="e#2307#2308#0" expanded="true" />
+            <element signature="e#2353#2354#0" expanded="true" />
+            <element signature="method#Path#1;class#Settings#0" expanded="false" />
+            <element signature="method#readSettings#0;class#Settings#0" expanded="false" />
             <element signature="method#ParseLine#0;class#Settings#0" expanded="false" />
-            <element signature="method#get_CleanValue#0;class#Settings#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/GUIManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="42" column="13" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="13" />
+        <state relative-caret-position="263">
+          <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
             <marker date="1520266076254" expanded="false" signature="1003:1022" placeholder=" { " />
@@ -1470,10 +1318,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AppGUI.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI/chooseClass.form">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/SchoolClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+        <state relative-caret-position="571">
+          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1482,34 +1341,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/chooseClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+        <state relative-caret-position="583">
+          <caret line="81" column="23" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="23" />
           <folding>
-            <element signature="method#chooseClass#0;class#chooseClass#0" expanded="false" />
-            <element signature="e#836#837#0" expanded="true" />
-            <element signature="e#878#879#0" expanded="true" />
-            <element signature="e#1090#1091#0" expanded="true" />
-            <element signature="e#1132#1133#0" expanded="true" />
-            <element signature="e#1659#1660#0" expanded="true" />
-            <element signature="e#1684#1685#0" expanded="true" />
-            <element signature="method#showClassDialog#0;class#chooseClass#0" expanded="false" />
+            <element signature="e#1128#1129#0" expanded="true" />
+            <element signature="e#1170#1171#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/chooseStudent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-433">
-          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+        <state relative-caret-position="-22">
+          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
           <folding>
-            <element signature="e#575#576#0" expanded="true" />
-            <element signature="e#613#614#0" expanded="true" />
-            <element signature="e#745#746#0" expanded="true" />
-            <element signature="e#787#788#0" expanded="true" />
-            <element signature="e#1555#1556#0" expanded="true" />
-            <element signature="e#1580#1581#0" expanded="true" />
+            <element signature="method#chooseStudent#0;class#chooseStudent#0" expanded="false" />
+            <element signature="e#620#621#0" expanded="true" />
+            <element signature="e#658#659#0" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/javax/swing/AbstractButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="2021" column="0" selection-start-line="2021" selection-start-column="0" selection-end-line="2021" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/DatabaseManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#387#388#0" expanded="true" />
+            <element signature="e#854#855#0" expanded="true" />
+            <element signature="e#893#894#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/AppGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-726">
+          <caret line="73" column="5" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/AppGUI.form">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
       </provider>
     </entry>
   </component>

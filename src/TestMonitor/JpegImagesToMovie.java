@@ -247,7 +247,7 @@ public class JpegImagesToMovie implements ControllerListener, DataSinkListener {
                 i++;
                 if (i >= args.length)
                     prUsage();
-                outputURL = Settings.ReportPath()+Settings.SEP+Settings.DESKTOP_REC_FILE;
+                outputURL = Settings.Path(Settings.DIR.DIR_Report, Settings.DESKTOP_REC_FILE);
                 System.out.println("outputURL: "+outputURL);
             } else {
                // inputFiles.addElement(args[i]);

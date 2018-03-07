@@ -7,6 +7,14 @@ import java.io.*;
  */
 public class Settings {
 
+    public enum DIR {
+        DIR_Root,
+        DIR_Database,
+        DIR_DatabaseClassi,
+        DIR_DatabaseProgetti,
+        DIR_Report
+    }
+
     public static int get_frameRate() {
         return _frameRate;
     }
@@ -18,8 +26,6 @@ public class Settings {
     public static int get_width() {
         return _width;
     }
-
-
 
     static String SCHOOL_DATA_DIR;
     public static String DESKTOP_REC_FILE;
@@ -37,11 +43,13 @@ public class Settings {
     // TODO parametric in Settings file
     public static final String BASEPATH =
             "C:\\Users\\Anna Bonaldo\\Documents\\UsageStats\\ScratchTests";
+    public static final String DATABASE_CLASSES = "Database\\DatabaseClassi";
+    public static final String DATABASE_PROJECTS = "Database\\DatabaseProgetti";
     public static final String DATABASE = "Database";
     public static final String REPORT = "Report";
     public static final String SETTINGS_FILE = "Settings.txt";
     public static final String IMG_FOLDER = "Imagesdir";
-    public static final String CSV_CLASS_FILE = ".csv";
+    public static final String CSV = ".csv";
 
 
 
@@ -54,7 +62,8 @@ public class Settings {
 
     public static String  getStudentsListFile(String classID)
     {
-        return DBPath()+SEP+classID+SEP+classID+".csv";
+        System.out.println("CSV: "+ Path(DIR.DIR_DatabaseClassi, classID)+SEP+classID+CSV);
+       return Path(DIR.DIR_DatabaseClassi, classID)+SEP+classID+CSV;
     }
 
     public static long getMOUSEStatsWindows() {
@@ -67,32 +76,40 @@ public class Settings {
     {
     }
 
-
-    public static String ReportPath()
+    public static String ClassPath(DIR dir, String file)
     {
-        return Settings.BASEPATH + Settings.SEP +
-                Settings.REPORT  + Settings.SEP+
-                DatabaseManager.ClassID();
+        return ClassPath(dir)+SEP+file;
     }
 
-    public static String ClassPath()
+    public static String ClassPath(DIR dir)
     {
-        return Settings.BASEPATH + Settings.SEP +
-               Settings.DATABASE + Settings.SEP +
-               DatabaseManager.ClassID();
+        return Path(dir)+SEP+DatabaseManager.ClassID();
     }
 
-    public static String DBPath()
+    public static String Path(DIR dir, String file )
     {
-        return Settings.BASEPATH + Settings.SEP +
-                Settings.DATABASE ;
+        return Path(dir)+SEP+file;
     }
+
+    public static String Path(DIR dir)
+    {
+        String path = BASEPATH;
+        switch (dir){
+            case DIR_Database: return path+SEP+DATABASE;
+            case DIR_DatabaseClassi: return path+SEP+DATABASE_CLASSES;
+            case DIR_DatabaseProgetti: return path+SEP+DATABASE_PROJECTS;
+            case DIR_Report: return path+SEP+REPORT;
+            default: return BASEPATH;
+        }
+
+    }
+
 
     public static void readSettings()
     {
         try {
-            String filename = Settings.BASEPATH+SEP+DATABASE+SEP+SETTINGS_FILE;
-           System.out.println("FILE : "+filename);
+            String filename = Path(DIR.DIR_Database, SETTINGS_FILE);
+            System.out.println("FILE : "+filename);
 
             BufferedReader br = new BufferedReader(new FileReader(filename));
             String line = br.readLine();

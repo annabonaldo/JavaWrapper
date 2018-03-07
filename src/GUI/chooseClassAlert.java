@@ -1,23 +1,16 @@
 package GUI;
 
-import Application.DatabaseManager;
-
 import javax.swing.*;
 import java.awt.event.*;
-import java.util.ArrayList;
 
-public class chooseStudent extends JDialog {
-    AppGUI parentAppGUI;
+public class chooseClassAlert extends JDialog {
+
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JList list1;
 
+    public chooseClassAlert() {
 
-
-
-    public chooseStudent(AppGUI parent) {
-        parentAppGUI = parent;
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -51,21 +44,19 @@ public class chooseStudent extends JDialog {
     }
 
     private void onOK() {
-        //DatabaseManager.SetStudentId(parentAppGUI.dialogChooseStudent.list1.getSelectedIndex());
-   //     parentAppGUI.UpdateBTNVisibility();
-   //     dispose();
-    }
-
-    private void onCancel() {
+// add your code here
         dispose();
     }
 
-    public void showStudentDialog(ArrayList<String> studentList) {
-        DefaultListModel<String> model = new DefaultListModel<>();
-        for (String student:studentList) { model.addElement(student); }
-      //  parentAppGUI.dialogChooseStudent.list1.setModel(model);
-    //    parentAppGUI.dialogChooseStudent.pack();
-    //    parentAppGUI.dialogChooseStudent.setVisible(true);
+    private void onCancel() {
+// add your code here if necessary
+        dispose();
+    }
+
+    public static void main(String[] args) {
+        chooseClassAlert dialog = new chooseClassAlert();
+        dialog.pack();
+        dialog.setVisible(true);
         System.exit(0);
     }
 }

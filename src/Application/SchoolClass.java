@@ -17,16 +17,21 @@ public class SchoolClass {
     SchoolClass(String classLine){
         _classID = classLine;
         ReadClass();
+        System.out.println(" End ReadClass ");
     }
 
     public ArrayList<String> Students(){ return students; }
 
     public void ReadClass()
     {
+        System.out.println("getStudentsListFile ");
         try {
-            BufferedReader br = new BufferedReader(new FileReader(Settings.getStudentsListFile(this._classID)));
+            String filename = Settings.getStudentsListFile(this._classID);
+            System.out.println(filename);
 
-            System.out.println(Settings.getStudentsListFile(this._classID));
+            FileReader fileReader = new FileReader(filename);
+            BufferedReader br = new BufferedReader(fileReader);
+
 
             String line = br.readLine();
             while (line != null) {

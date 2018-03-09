@@ -4,6 +4,10 @@ import Application.DatabaseManager;
 import Application.Settings;
 
 import javax.swing.*;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.DefaultTreeSelectionModel;
+import javax.swing.tree.TreeNode;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
@@ -22,7 +26,8 @@ public class AppGUI {
     private JButton BTNchooseClass;
     private JList chooseClassList;
     private JList chooseStudentList;
-
+    private JButton BTNchooseProject;
+    private JTree chooseProjectTree;
 
 
 
@@ -30,6 +35,7 @@ public class AppGUI {
 
         this.chooseStudentList.setVisible(false);
         LoadClassList();
+        LoadProjectsList();
         BTNchoooseStudent.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -40,7 +46,6 @@ public class AppGUI {
 
             }
         });
-
 
         BTNchooseClass.addActionListener(new ActionListener() {
             @Override
@@ -62,6 +67,12 @@ public class AppGUI {
         chooseStudentList.setVisible(true);
         chooseStudentList.setEnabled(true);
         UpdateBTNVisibility();
+        BTNchooseProject.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
 
     public  void ShowStartFrame()
@@ -92,7 +103,7 @@ public class AppGUI {
         HashMap<String, String> classesMAP = new HashMap<>();
 
         // TODO move to DatabaseManager
-        File dir = new File(Settings.Path(Settings.DIR.DIR_DatabaseClassi));
+        File dir = new File(Settings.DATABASE_CLASSES);
         File[] files = dir.listFiles();
         for (File file : files) {
             if (file.isDirectory()) {
@@ -121,5 +132,34 @@ public class AppGUI {
         chooseStudentList.setModel(model);
 
 
+    }
+
+    public void LoadProjectsList() {
+        HashMap<String, String> projectsMAP = new HashMap<>();
+
+        // TODO move to DatabaseManager
+        File dir = new File(Settings.DATABASE_PROJECTS);
+        File[] files = dir.listFiles();
+        for (File file : files) {
+            if (file.isDirectory()) {
+                System.out.println("directory:" + file.getAbsolutePath());
+                projectsMAP.put(file.getName(), file.getAbsolutePath());
+            }
+        }
+
+
+        DefaultMutableTreeNode top =
+                new DefaultMutableTreeNode("Progetti Scratch");
+        DefaultTreeModel model  = new DefaultTreeModel(top);
+        for (File test : files) {
+            if (test.isDirectory() && (test.listFiles()!=null)){
+                DefaultMutableTreeNode testFolder = new DefaultMutableTreeNode(test.getName());
+                for (File project : test.listFiles()) {
+                    testFolder.add(new DefaultMutableTreeNode(project.getName()));
+                }
+                top.add(testFolder);
+            }
+        }
+        chooseProjectTree.setModel(model);
     }
 }

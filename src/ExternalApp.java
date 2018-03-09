@@ -13,8 +13,8 @@ public class ExternalApp {
             .getLocalGraphicsEnvironment().getScreenDevices()[0];
     public static void main(String args[]) {
         try{
-           // String[] cmdArray = new String[]{"C:\\Program Files (x86)\\Scratch 2\\Scratch 2.exe\\  "};
-          //  showFrame();
+            // String[] cmdArray = new String[]{"C:\\Program Files (x86)\\Scratch 2\\Scratch 2.exe\\  "};
+            //  showFrame();
             String[] cmdArray = new String[]{"C:\\Users\\Anna Bonaldo\\Desktop\\scratch_start.bat"};
             Runtime.getRuntime().exec(cmdArray);
 

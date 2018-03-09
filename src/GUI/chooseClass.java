@@ -64,7 +64,7 @@ public class chooseClass extends JDialog {
 
         HashMap<String, String> classesMAP = new HashMap<>();
 
-        File dir = new File(Settings.Path(Settings.DIR.DIR_DatabaseClassi));
+        File dir = new File(Settings.DATABASE_CLASSES);
         File[] files = dir.listFiles();
         for (File file : files) {
             if (file.isDirectory()) {

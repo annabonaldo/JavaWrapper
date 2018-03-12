@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by Anna Bonaldo on 05/03/2018.
  */
-public class GUIManager {
+public class TestManager {
     static void ShowGUI(){
 
     }

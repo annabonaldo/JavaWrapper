@@ -1,4 +1,4 @@
-import GUI.GUIManager;
+import GUI.TestManager;
 
 /**
  * Created by Anna Bonaldo on 05/03/2018.
@@ -8,7 +8,7 @@ public class App {
 
     static void StartGUI() {
 
-        GUIManager.showFrame();
+        TestManager.showFrame();
     }
 
     static void StartMonitors(){

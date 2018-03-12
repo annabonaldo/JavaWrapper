@@ -1,4 +1,6 @@
-package GUI;
+package Application.GUI;
+
+import Application.App;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -19,7 +21,7 @@ public class TestSession {
         BTNinizia.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                App.StartTestSession();
             }
         });
         BTNesci.addActionListener(new ActionListener() {
@@ -38,7 +40,6 @@ public class TestSession {
     {
         JFrame frame = new JFrame("Inizia Sessione di Test Scratch");
         frame.setContentPane(testSessionPanel);
-
         frame.setVisible(true);
         frame.pack();
         frame.setLocationRelativeTo(null);

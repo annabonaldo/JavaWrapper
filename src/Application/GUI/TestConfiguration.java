@@ -1,6 +1,6 @@
-package GUI;
+package Application.GUI;
 
-import Application.DatabaseManager;
+import Application.Database.DatabaseManager;
 import Application.Settings;
 
 import javax.swing.*;
@@ -22,7 +22,6 @@ public class TestConfiguration {
 
     private static final String rootTreeProjectName = "Progetti di test";
     public  JPanel appConfigMain;
-    public  JButton impostazioniButton;
     private JButton BTNConfigConfirm;
     private JButton BTNchoooseStudent;
     private JButton BTNchooseClass;
@@ -33,7 +32,11 @@ public class TestConfiguration {
     private JScrollPane chooseClassPanel;
     private JScrollPane chooseProjectPanel;
     private JScrollPane chooseStudentPanel;
-    private JButton button1;
+    private JLabel InstructionsMainLabel;
+    private JLabel chooseStudentLabel;
+    private JLabel chooseClassLabel;
+    private JLabel ChooseProjectLabel;
+    private JButton BTNReset;
     JFrame  mainFrame;
 
 
@@ -82,14 +85,22 @@ public class TestConfiguration {
         BTNConfigConfirm.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                TestSession session  = new TestSession();
-                session.show();
+                mainFrame.dispose();
+               GUITestManager.ShowSessionStartFrame();
+            }
+        });
+
+        BTNReset.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DatabaseManager.ResetConfig();
+                UpdateBTNVisibility();
             }
         });
         UpdateBTNVisibility();
     }
 
-    public  void ShowStartFrame()
+    public  void Show()
     {
         mainFrame = new JFrame("Scratch Test");
         mainFrame.setContentPane(appConfigMain);
@@ -98,12 +109,6 @@ public class TestConfiguration {
         mainFrame.pack();
         mainFrame.setLocationRelativeTo(null);
 
-    }
-
-    public static void main(String args[]){
-        Settings.readSettings();
-        TestConfiguration testConfiguration = new TestConfiguration();
-        testConfiguration.ShowStartFrame();
     }
 
     public void UpdateBTNVisibility() {
@@ -131,6 +136,10 @@ public class TestConfiguration {
         BTNchooseClass.setVisible(true);
         BTNchooseProject.setVisible(true);
 
+        BTNchooseProject.setForeground(Color.DARK_GRAY);
+        BTNchooseClass.setForeground(Color.DARK_GRAY);
+        BTNchoooseStudent.setForeground(Color.DARK_GRAY);
+
         if(showChooseProject)
         {
             BTNchooseProject.setBackground(Color.LIGHT_GRAY);
@@ -150,9 +159,9 @@ public class TestConfiguration {
         }
         else
         if(haveConfig){
-            BTNchooseProject.setBackground(Color.LIGHT_GRAY);
-            BTNchooseClass.setBackground(Color.LIGHT_GRAY);
-            BTNchoooseStudent.setBackground(Color.LIGHT_GRAY);
+            BTNchooseProject.setBackground(Color.GREEN);
+            BTNchooseClass.setBackground(Color.GREEN);
+            BTNchoooseStudent.setBackground(Color.GREEN);
         }
         chooseProjectPanel.setVisible(showChooseProject);
         chooseProjectTree.setVisible(showChooseProject);
@@ -194,9 +203,9 @@ public class TestConfiguration {
 
         ArrayList<String> studentList = DatabaseManager.StudentsList();
 
-        System.out.println("TestConfiguration Student List");
+        System.out.println("TestConfiguration DBStudent List");
         for(String student: studentList)
-            System.out.println("Student: "+ student);
+            System.out.println("DBStudent: "+ student);
 
         DefaultListModel<String> model = new DefaultListModel<>();
         for (String student:studentList) { model.addElement(student); }

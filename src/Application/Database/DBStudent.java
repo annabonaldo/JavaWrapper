@@ -1,4 +1,4 @@
-package Application;
+package Application.Database;
 
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
@@ -6,7 +6,7 @@ import static java.lang.Boolean.TRUE;
 /**
  * Created by Anna Bonaldo on 23/02/2018.
  */
-public class Student {
+public class DBStudent {
     enum Gender {Female, Male};
     enum ItalianKnowledge {italian, one, two, three, four, five};
     String _name;
@@ -19,7 +19,7 @@ public class Student {
     String _nationality;
     ItalianKnowledge _italianKnowledge;
 
-    public Student(String _name, Gender _gender,Integer _age) {
+    public DBStudent(String _name, Gender _gender, Integer _age) {
         this._age = _age;
         this._name = _name;
         this._gender = _gender;
@@ -28,7 +28,7 @@ public class Student {
         this._nationality = "Italiana";
     }
 
-    public Student(String _name, Gender _gender, Boolean _italian, Integer _age, String _nationality, ItalianKnowledge _italianKnowledge)
+    public DBStudent(String _name, Gender _gender, Boolean _italian, Integer _age, String _nationality, ItalianKnowledge _italianKnowledge)
     {
         this(_name, _gender, _age);
 

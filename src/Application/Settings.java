@@ -1,10 +1,9 @@
 package Application;
 
-import javax.swing.*;
+import Application.Database.DatabaseManager;
+
 import javax.swing.filechooser.FileSystemView;
-import javax.tools.JavaFileManager;
 import java.io.*;
-import java.nio.file.*;
 
 /**
  * Created by Anna Bonaldo on 15/01/2018.
@@ -14,8 +13,9 @@ public class Settings {
     public static final String SEP = "\\";
     public static final String CSV = ".csv";
     public static final String EXE = ".exe";
-    static  final String  SCREENREC_OUTFILE         = "screenRec.mp4";
-    static  final String  MOUSEMONITTOR_OUTFILE     = "mouseStats.csv";
+    public static  final String  SCREENREC_OUTFILE         = "screenRec.mp4";
+    public static  final String  MOUSEMONITTOR_OUTFILE     = "mouseStats.csv";
+    public static  final String  SCREENSHOTFILE     = "screenshotSoluzione.png";
 
 
     public static final String ROOT_DIR = FileSystemView.getFileSystemView().getDefaultDirectory()+SEP+"ScratchTests";
@@ -39,7 +39,7 @@ public class Settings {
             FileSystemView.getFileSystemView().getDefaultDirectory()+SEP+"UsageStats";        // "C:\\Users\\Anna Bonaldo\\Documents\\UsageStats\\";
 
     //todo create get methods
-    public  static  String  SCREENREC_OUTPATH;
+    public  static  String  SCREENREC_OUTPATH = "C:\\Users\\Anna Bonaldo\\Documents\\ScratchTests\\Database\\DatabaseProgetti\\test1\\prova.mp4";
     public  static  String  MOUSEMONITTOR_OUTPATH;
 
     public static  int  MOUSEMONITTOR_MIN_TIMESPAN = 10;//Default value
@@ -47,6 +47,7 @@ public class Settings {
 
     public static  int  SCREENREC_FR = 30 ;
     public static  int  SCREENREC_BUFFERSIZE = 100;
+    public static String SCHOOLID;
     // end todo ------------
 
 
@@ -61,6 +62,7 @@ public class Settings {
 
     static final String  TXT_SCREENREC_FR= "SCREENREC_FR";
     static final String  TXT_SCREENREC_BUFFERSIZE = "SCREENREC_BUFFERSIZE";
+    static final String  TXT_SCHOOLID = "SCHOOLID";
 
 
 
@@ -71,14 +73,14 @@ public class Settings {
        return Path(DATABASE_CLASSES, classID)+SEP+classID+CSV;
     }
 
-    public static String ClassPath(String dir, String file)
+    public static String ClassPath(String file)
     {
-        return ClassPath(dir)+SEP+file;
+        return ClassPath()+SEP+file;
     }
 
-    public static String ClassPath(String dir)
+    public static String ClassPath()
     {
-        return dir+SEP+DatabaseManager.ClassID();
+        return DATABASE_CLASSES+SEP+ DatabaseManager.ClassID();
     }
 
     public static String Path(String dir, String file )
@@ -117,23 +119,26 @@ public class Settings {
     private static void ParseLine(String line)
     {
         // PATH PARAMETERS PARSING
+
+        System.out.println("settings line: "+line);
         if(line.contains(Settings.TXT_SCRATCH_EXE_FULLPATH)) {
             line = line.replace(Settings.TXT_SCRATCH_EXE_FULLPATH, "");
-            parseExePath(line, SCRATCH_EXE, SCRATCH_FULLPATH);
-
+            parseExePath(line, TXT_SCRATCH_EXE_FULLPATH);
+            System.out.println(SCRATCH_FULLPATH+" "+SCRATCH_EXE);
         }
         else if(line.contains(Settings.TXT_MOUSEMONITOR_EXE_FULLPATH)) {
             line = line.replace(Settings.TXT_MOUSEMONITOR_EXE_FULLPATH, "");
-            parseExePath(line, MOUSEMONITOR_EXE, MOUSEMONITOR_FULLPATH);
-
+            parseExePath(line, TXT_MOUSEMONITOR_EXE_FULLPATH);
+            System.out.println(MOUSEMONITOR_FULLPATH+" "+MOUSEMONITOR_EXE);
         }
         else if(line.contains(Settings.TXT_SCREENREC_EXE_FULLPATH)) {
             line = line.replace(Settings.TXT_SCREENREC_EXE_FULLPATH, "");
-            parseExePath(line, SCREENREC_EXE, SCREENREC_FULLPATH);
+            parseExePath(line, TXT_SCREENREC_EXE_FULLPATH);
+            System.out.println(SCREENREC_FULLPATH+" "+SCREENREC_EXE);
         }
         else if(line.contains(Settings.TXT_MOUSEMONITOR_BACKUP_DIR)) {
             line = line.replace(Settings.TXT_MOUSEMONITOR_BACKUP_DIR, "");
-            parsePath(line, MOUSEMONITOR_BACKUP_DIR);
+            parsePath(line, TXT_MOUSEMONITOR_BACKUP_DIR);
         }
 
         else if(line.contains(Settings.TXT_SCREENREC_BUFFERSIZE)) {
@@ -153,6 +158,10 @@ public class Settings {
             line = line.replace(Settings.TXT_MOUSEMONITTOR_SEC_TIMESPAN, "");
             Settings.MOUSEMONITTOR_SEC_TIMESPAN = Integer.parseInt(get_CleanValue(line));
         }
+        else if(line.contains(Settings.TXT_SCHOOLID)){
+            line = line.replace(Settings.TXT_SCHOOLID, "");
+            Settings.SCHOOLID = get_CleanValue(line);
+        }
 
     }
 
@@ -166,26 +175,36 @@ public class Settings {
         return s;
     }
 
-    private static void  parseExePath(String line, String exefilename, String fullpath)
+    private static void  parseExePath(String line, String settings)
     {
         String s = line;
         s = s.substring(s.indexOf("\"") + 1);
         s = s.substring(0, s.indexOf("\""));
         File file = new File(s);
-        exefilename =  file.getName().replace(EXE, "");
-        fullpath = file.getAbsolutePath();
-        System.out.println("EXE FILENAME: " +exefilename+" | FULLPATH: "+fullpath);
-    }
-    private static void  parsePath(String line, String path)
-    {
-        String s = line;
-        s = s.substring(s.indexOf("\"") + 1);
-        s = s.substring(0, s.indexOf("\""));
-        File file = new File(s);
-        path = file.getAbsolutePath();
-        System.out.println("PATH: " +path);
-    }
 
+        String exefilename =  file.getName().replace(EXE, "");
+        String fullpath = file.getAbsolutePath();
+        if(settings == TXT_SCRATCH_EXE_FULLPATH){
+            SCRATCH_EXE = exefilename; SCRATCH_FULLPATH = fullpath;
+        }
+        if(settings == TXT_MOUSEMONITOR_EXE_FULLPATH){
+            MOUSEMONITOR_EXE = exefilename; MOUSEMONITOR_FULLPATH = fullpath;
+        }
+        if(settings == TXT_SCREENREC_EXE_FULLPATH){
+            SCREENREC_EXE = exefilename; SCREENREC_FULLPATH = fullpath;
+        }
+
+
+       // System.out.println("EXE FILENAME: " +exefilename+" | FULLPATH: "+fullpath);
+    }
+    private static void  parsePath(String line, String settings) {
+        String s = line;
+        s = s.substring(s.indexOf("\"") + 1);
+        s = s.substring(0, s.indexOf("\""));
+        File file = new File(s);
+        if (settings == TXT_MOUSEMONITOR_BACKUP_DIR)
+            MOUSEMONITOR_BACKUP_DIR = file.getAbsolutePath();
+    }
 
 
 }

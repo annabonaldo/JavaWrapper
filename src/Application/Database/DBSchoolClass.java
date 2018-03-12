@@ -1,4 +1,6 @@
-package Application;
+package Application.Database;
+
+import Application.Settings;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -10,11 +12,11 @@ import java.util.ArrayList;
 /**
  * Created by Anna Bonaldo on 23/02/2018.
  */
-public class SchoolClass {
+public class DBSchoolClass {
     String _classID;
     ArrayList<String> students = new ArrayList<>();
 
-    SchoolClass(String classLine){
+    DBSchoolClass(String classLine){
         _classID = classLine;
         ReadClass();
         System.out.println(" End ReadClass ");

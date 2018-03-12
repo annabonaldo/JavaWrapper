@@ -1,4 +1,4 @@
-package TestMonitor;
+package Application.TestController;
 
 import java.io.*;
 import java.util.Scanner;
@@ -22,6 +22,7 @@ public class CmdController {
 
     public static Process start(String processExe, String param1, String param2) throws IOException {
         Process process = null;
+        System.out.println(processExe+"--"+param1+"--"+param2);
         if(!processExe.isEmpty()) {
             ProcessBuilder builder = new ProcessBuilder(processExe, param1, param2);
             builder.redirectErrorStream(true);

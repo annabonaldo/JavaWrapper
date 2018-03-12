@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Application.GUI.TestConfiguration">
+  <grid id="27dc6" binding="appConfigMain" layout-manager="GridLayoutManager" row-count="11" column-count="45" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="3" left="3" bottom="3" right="3"/>
+    <constraints>
+      <xy x="20" y="19" width="1227" height="600"/>
+    </constraints>
+    <properties>
+      <autoscrolls value="true"/>
+      <background color="-2106913"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="55940" class="javax.swing.JButton" binding="BTNchooseClass">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="45" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-330505"/>
+          <foreground color="-12895429"/>
+          <text value="Scegli Classe"/>
+        </properties>
+      </component>
+      <scrollpane id="771e" binding="chooseStudentPanel">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="45" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="256" height="166"/>
+          </grid>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="625a9" class="javax.swing.JList" binding="chooseStudentList">
+            <constraints/>
+            <properties>
+              <enabled value="true"/>
+              <model/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+      <component id="50328" class="javax.swing.JButton" binding="BTNchooseProject">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="45" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-330505"/>
+          <foreground color="-12895429"/>
+          <text value="Scegli Progetto"/>
+        </properties>
+      </component>
+      <scrollpane id="8f37d" binding="chooseProjectPanel">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="45" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="75" height="114"/>
+          </grid>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="82687" class="javax.swing.JTree" binding="chooseProjectTree">
+            <constraints/>
+            <properties>
+              <editable value="true"/>
+              <rootVisible value="false"/>
+              <showsRootHandles value="true"/>
+            </properties>
+            <clientProperties>
+              <JTree.lineStyle class="java.lang.String" value=""/>
+              <html.disable class="java.lang.Boolean" value="false"/>
+            </clientProperties>
+          </component>
+        </children>
+      </scrollpane>
+      <scrollpane id="84771" binding="chooseClassPanel">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="45" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="3d6c9" class="javax.swing.JList" binding="chooseClassList">
+            <constraints/>
+            <properties/>
+          </component>
+        </children>
+      </scrollpane>
+      <component id="2c30b" class="javax.swing.JButton" binding="BTNchoooseStudent">
+        <constraints>
+          <grid row="9" column="0" row-span="1" col-span="45" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-330505"/>
+          <enabled value="true"/>
+          <foreground color="-12895429"/>
+          <hideActionText value="true"/>
+          <horizontalTextPosition value="2"/>
+          <margin top="5" left="5" bottom="5" right="5"/>
+          <text value=" Scegli Studente"/>
+        </properties>
+      </component>
+      <component id="eabb3" class="javax.swing.JLabel" binding="InstructionsMainLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="16" style="1"/>
+          <foreground color="-12895429"/>
+          <text value="Configura il test"/>
+        </properties>
+      </component>
+      <component id="1c741" class="javax.swing.JLabel" binding="ChooseProjectLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-12895429"/>
+          <text value="Seleziona il file del progetto Scratch "/>
+        </properties>
+      </component>
+      <component id="f697d" class="javax.swing.JLabel" binding="chooseClassLabel">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-12895429"/>
+          <text value="Seleziona la classe: "/>
+        </properties>
+      </component>
+      <component id="4dbcc" class="javax.swing.JLabel" binding="chooseStudentLabel">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-12895429"/>
+          <text value="Seleziona il nome dello studente di questa postazione:"/>
+        </properties>
+      </component>
+      <component id="c9caa" class="javax.swing.JButton" binding="BTNConfigConfirm">
+        <constraints>
+          <grid row="10" column="1" row-span="1" col-span="44" vsize-policy="7" hsize-policy="7" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="318" height="32"/>
+          </grid>
+        </constraints>
+        <properties>
+          <actionCommand value=""/>
+          <background color="-330505"/>
+          <enabled value="true"/>
+          <font style="1"/>
+          <foreground color="-12895429"/>
+          <hideActionText value="true"/>
+          <horizontalTextPosition value="2"/>
+          <text value="  Conferma Configurazione"/>
+        </properties>
+      </component>
+      <component id="7d59" class="javax.swing.JButton" binding="BTNReset">
+        <constraints>
+          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-330505"/>
+          <foreground color="-12895429"/>
+          <hideActionText value="false"/>
+          <horizontalTextPosition value="4"/>
+          <icon value="resources/reset-icon.png"/>
+          <text value="Reset Configurazione"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

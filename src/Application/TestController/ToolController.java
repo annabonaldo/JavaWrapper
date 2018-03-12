@@ -33,14 +33,12 @@ public class ToolController
      static void StartScreenRecorderProcess() throws IOException {
       //   DatabaseManager.RefreshReportDir();
          String exe = Settings.SCREENREC_EXE;
-         Settings.SCREENREC_BUFFERSIZE = 100;
-         Settings.SCREENREC_FR = 10;
-         String prova = Settings.DATABASE+Settings.SEP+"video output";
+         String file = Settings.DATABASE+Settings.SEP+Settings.SCREENREC_OUTFILE;
 
          String command = "ffmpeg -y -rtbufsize 100M -f gdigrab -framerate 30 " +
                          " -probesize 10M -draw_mouse 1 -i desktop -c:v libx264 -r 30 " +
                          "-preset ultrafast" +
-                         " -tune zerolatency -crf 25 -pix_fmt yuv420p \""+prova+".mp4\"";
+                         " -tune zerolatency -crf 25 -pix_fmt yuv420p \""+file+"\"";
         System.out.println(command);
 
          String command1 = "ffmpeg -y -rtbufsize 100M -f gdigrab -framerate 30 " +

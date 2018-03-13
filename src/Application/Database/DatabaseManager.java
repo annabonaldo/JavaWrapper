@@ -14,7 +14,7 @@ public class DatabaseManager {
 
     static DBSchoolClass schoolClass;
     static int studentId = -1;
-    static File testProject = new File("C:\\Users\\Anna Bonaldo\\Documents\\ScratchTests\\Database\\DatabaseProgetti\\test1\\01.sb2");
+    static File testProject;// = new File("C:\\Users\\Anna Bonaldo\\Documents\\ScratchTests\\Database\\DatabaseProgetti\\test1\\01.sb2");
 
     static File reportDir;
 

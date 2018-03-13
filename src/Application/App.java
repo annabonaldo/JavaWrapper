@@ -11,20 +11,26 @@ import Application.TestController.ToolController;
 public class App {
 
     static void StartConfigurationUI() {
-
         GUITestManager.ShowConfigurationFrame();
     }
 
     public static void StartTestSession()
     {
-        ToolController.StartSession();
+        ToolController.Start();
+        System.out.println("END START SESSION");
+        GUITestManager.StartSessionExecutionUI();
+    }
+
+    public static void EndTestSession() {
+        ToolController.Stop();
     }
 
 
     public static void main(String args[]) {
+
         try{
             Settings.readSettings();
-           // StartConfigurationUI();
+            StartConfigurationUI();
             StartTestSession();
         }
         catch(Exception e){

@@ -25,7 +25,7 @@ public class CmdController {
         System.out.println(processExe+"--"+param1+"--"+param2);
         if(!processExe.isEmpty()) {
             ProcessBuilder builder = new ProcessBuilder(processExe, param1, param2);
-            builder.redirectErrorStream(true);
+            builder.redirectErrorStream(false);
             process = builder.start();
         }
         return process;

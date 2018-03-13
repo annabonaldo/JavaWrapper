@@ -10,7 +10,6 @@ import java.awt.*;
  * Created by Anna Bonaldo on 05/03/2018.
  */
 public class GUITestManager {
-
     public static void ShowConfigurationFrame(){
 
         TestConfiguration testConfiguration = new TestConfiguration();
@@ -27,6 +26,10 @@ public class GUITestManager {
         App.StartTestSession();
     }
 
+    public static void StartSessionExecutionUI(){
+        TestSessionExecution.Show();
+    }
+
 
     public static void showFrame() {
 
@@ -41,4 +44,27 @@ public class GUITestManager {
         frame.pack();
         frame.setVisible(true);
     }
+
+    public static void CheckEndSessionCommand() {
+        endTestSessionCheck.CheckEndSession();
+    }
+
+    public static void EndSessionCommand() {
+        CheckEndSessionCommand();
+        if(endTestSessionCheck.isEndSession())
+        {
+
+            System.out.println("END SESSION");
+            App.EndTestSession();
+        }
+        else {
+            TestSessionExecution.Show();
+            System.out.println("CONTINUE SESSION");
+        }
+
+    }
+
+    /*public static void EndSessionCancelled() {
+        TestSessionExecution.Show();
+    }*/
 }

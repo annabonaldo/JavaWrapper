@@ -5,6 +5,9 @@ import Application.GUI.GUITestManager;
 import Application.GUI.TestSession;
 import Application.TestController.ToolController;
 
+import java.awt.*;
+import java.io.IOException;
+
 /**
  * Created by Anna Bonaldo on 05/03/2018.
  */
@@ -17,7 +20,6 @@ public class App {
     public static void StartTestSession()
     {
         ToolController.Start();
-        System.out.println("END START SESSION");
         GUITestManager.StartSessionExecutionUI();
     }
 
@@ -27,8 +29,7 @@ public class App {
 
 
     public static void main(String args[]) {
-
-        try{
+     try{
             Settings.readSettings();
             StartConfigurationUI();
             StartTestSession();

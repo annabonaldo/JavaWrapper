@@ -64,7 +64,7 @@ public class GUITestManager {
 
     }
 
-    /*public static void EndSessionCancelled() {
+    public static void EndSessionCancelled() {
         TestSessionExecution.Show();
-    }*/
+    }
 }

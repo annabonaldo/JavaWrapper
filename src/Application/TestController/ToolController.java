@@ -97,25 +97,27 @@ public class ToolController
          screenrecExecution = new Thread(screenrecTool);
          screenrecExecution.start();
 
-
      }
 
     public static void Stop() {
 
-         try {
-             scratchTool.StopToolExecution();
+        try {
+            TakeSolutionScreenshot();
+        } catch (AWTException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        scratchTool.StopToolExecution();
             // mousemonitorTool.StopToolExecution();
-             screenrecTool.StopToolExecution();
+        screenrecTool.StopToolExecution();
 
-             scratchExecution.join(2000);
-            // mousemonitorExecution.join(2000);
-             screenrecExecution.join(2000);
+        scratchExecution.interrupt();
+        screenrecExecution.interrupt();
+        System.out.println("joined ");
 
-             System.out.println("joined ");
-         } catch (InterruptedException e) {
-             e.printStackTrace();
-         }
-     }
+    }
 
      static void StartScratchProcess() throws IOException {
        File project = DatabaseManager.Project();
@@ -161,7 +163,6 @@ public class ToolController
         CmdController.stop(_MouseMonitor);
         CollectMouseMonitorResults();
     }
-
      static void EndSreenRecorderProcess() throws IOException {
         String command = "q";
         CmdController.cmdWrite(_DesktopRecorderCMD, command);
@@ -173,9 +174,12 @@ public class ToolController
 
      }
 
-     private static void TakeSolutionScreenshot() throws AWTException, IOException {
-         File reportDir =  DatabaseManager.ReportDir();
+     public static void TakeSolutionScreenshot() throws AWTException, IOException {
+         //File reportDir =  DatabaseManager.ReportDir();
+         File reportDir = new File("C:\\Users\\Anna Bonaldo\\Documents\\ScratchTests\\Report");
+            System.out.println(reportDir.getAbsolutePath());
          File screenShot = new File(reportDir+Settings.SEP+Settings.SCREENSHOTFILE);
+         System.out.println(screenShot.getAbsolutePath());
          BufferedImage image = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
          ImageIO.write(image, "png", screenShot);
      }

@@ -14,7 +14,7 @@ public class CmdController {
        Process process = null;
         if(!processExe.isEmpty()) {
             ProcessBuilder builder = new ProcessBuilder(processExe);
-            builder.redirectErrorStream(true);
+            builder.redirectErrorStream(false);
             process = builder.start();
         }
         return process;
@@ -41,15 +41,18 @@ public class CmdController {
             BufferedWriter p_stdin =
                     new BufferedWriter(new OutputStreamWriter(cmd.getOutputStream()));
 
-            //single execution
-            p_stdin.write(text);
-            p_stdin.newLine();
-            p_stdin.flush();
-            Scanner s = new Scanner(cmd.getInputStream());
-            while (s.hasNext()) {
-                System.out.println(s.next());
+                //single execution
+                p_stdin.write(text);
+                p_stdin.newLine();
+                p_stdin.flush();
+                Boolean show_cmd_text = false;
+                if(show_cmd_text) {
+                Scanner s = new Scanner(cmd.getInputStream());
+                while (s.hasNext()) {
+                    System.out.println(s.next());
+                }
+                s.close();
             }
-            s.close();
         }
     }
 

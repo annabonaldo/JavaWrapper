@@ -50,11 +50,12 @@ public class endTestSessionCheck extends JDialog {
 
     private void onOK() {
         endSession = true;
-        dispose();
+        this.dispose();
+
     }
 
     private void onCancel() {
-        dispose();
+        this.dispose();
     }
 
     public static void CheckEndSession () {

@@ -23,16 +23,17 @@ public class CmdController {
     public static Process start(String processExe, String param1, String param2) throws IOException {
         Process process = null;
         System.out.println(processExe+"--"+param1+"--"+param2);
-        if(!processExe.isEmpty()) {
+
+        /*if(!processExe.isEmpty()) {
             ProcessBuilder builder = new ProcessBuilder(processExe, param1, param2);
             builder.redirectErrorStream(false);
             process = builder.start();
-        }
+        }*/
         return process;
     }
 
     public static void stop(Process process) throws IOException {
-       if(process!= null){ if (process.isAlive()) process.destroy();}
+        if(process!= null){ if (process.isAlive()) process.destroy();}
     }
 
     public static void cmdWrite(Process cmd, String text) throws IOException {

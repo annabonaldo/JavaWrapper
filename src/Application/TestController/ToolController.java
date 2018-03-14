@@ -85,17 +85,17 @@ public class ToolController
      public static void Start(){
          DatabaseManager.RefreshReportDir();
 
-         scratchTool = new ToolExecution(PROCESS.SCRATCH_PROCESS);
-         scratchExecution = new Thread(scratchTool);
-         scratchExecution.start();
+       //  scratchTool = new ToolExecution(PROCESS.SCRATCH_PROCESS);
+       //  scratchExecution = new Thread(scratchTool);
+       //  scratchExecution.start();
 
-       /*  mousemonitorTool = new ToolExecution(PROCESS.MOUSEMONITOR_PROCESS);
+         mousemonitorTool = new ToolExecution(PROCESS.MOUSEMONITOR_PROCESS);
          mousemonitorExecution = new Thread(mousemonitorTool);
-         mousemonitorExecution.start();*/
+         mousemonitorExecution.start();
 
-         screenrecTool = new ToolExecution(PROCESS.SCREENREC_PROCESS);
-         screenrecExecution = new Thread(screenrecTool);
-         screenrecExecution.start();
+       //  screenrecTool = new ToolExecution(PROCESS.SCREENREC_PROCESS);
+       //  screenrecExecution = new Thread(screenrecTool);
+       //  screenrecExecution.start();
 
      }
 
@@ -109,12 +109,13 @@ public class ToolController
             e.printStackTrace();
         }
 
-        scratchTool.StopToolExecution();
-            // mousemonitorTool.StopToolExecution();
-        screenrecTool.StopToolExecution();
+      //  scratchTool.StopToolExecution();
+          mousemonitorTool.StopToolExecution();
+     //   screenrecTool.StopToolExecution();
 
-        scratchExecution.interrupt();
-        screenrecExecution.interrupt();
+      //  scratchExecution.interrupt()
+      // screenrecExecution.interrupt();
+        mousemonitorTool.StopToolExecution();
         System.out.println("joined ");
 
     }
@@ -151,22 +152,22 @@ public class ToolController
          _DesktopRecorderCMD = CmdController.startCmd();
          CmdController.cmdWrite(_DesktopRecorderCMD, command);
      }
-     static void StartMouseMonitorProcess() throws IOException {
-        String exe = Settings.MOUSEMONITOR_EXE;
-        String min = "min:";
-        String sec = "sec:";
-
-        _MouseMonitor = CmdController.start(exe, min, sec);
-    }
-
-     static void EndMouseMonitorProcess() throws IOException {
-        CmdController.stop(_MouseMonitor);
-        CollectMouseMonitorResults();
-    }
      static void EndSreenRecorderProcess() throws IOException {
-        String command = "q";
-        CmdController.cmdWrite(_DesktopRecorderCMD, command);
-        CmdController.stop(_DesktopRecorderCMD);
+         String command = "q";
+         CmdController.cmdWrite(_DesktopRecorderCMD, command);
+         CmdController.stop(_DesktopRecorderCMD);
+     }
+
+     static void StartMouseMonitorProcess() throws IOException {
+         String exe = Settings.MOUSEMONITOR_EXE;
+         String min = "min:"+Settings.MOUSEMONITTOR_MIN_TIMESPAN;
+         String sec = "sec:"+Settings.MOUSEMONITTOR_SEC_TIMESPAN;
+
+         _MouseMonitor = CmdController.start(exe, min, sec);
+     }
+     static void EndMouseMonitorProcess() throws IOException {
+         CmdController.stop(_MouseMonitor);
+         CollectMouseMonitorResults();
      }
 
 

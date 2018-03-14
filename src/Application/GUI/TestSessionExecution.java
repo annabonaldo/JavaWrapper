@@ -28,6 +28,10 @@ public class TestSessionExecution extends JDialog {
 
     public static void Show() {
         TestSessionExecution dialog = new TestSessionExecution();
+        dialog.setUndecorated(true);
+        dialog.setModal (true);
+        dialog.setAlwaysOnTop (true);
+        dialog.setModalityType (ModalityType.APPLICATION_MODAL);
         dialog.pack();
         dialog.setVisible(true);
     }

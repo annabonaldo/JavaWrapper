@@ -16,7 +16,7 @@ public class GUITestManager {
         testConfiguration.Show();
     }
 
-    static void ShowSessionStartFrame(){
+    public static void ShowSessionStartFrame(){
         TestSession session  = new TestSession();
         session.show();
     }
@@ -29,7 +29,6 @@ public class GUITestManager {
     public static void StartSessionExecutionUI(){
         TestSessionExecution.Show();
     }
-
 
     public static void showFrame() {
 
@@ -53,13 +52,10 @@ public class GUITestManager {
         CheckEndSessionCommand();
         if(endTestSessionCheck.isEndSession())
         {
-
-            System.out.println("END SESSION");
             App.EndTestSession();
         }
         else {
             TestSessionExecution.Show();
-            System.out.println("CONTINUE SESSION");
         }
 
     }

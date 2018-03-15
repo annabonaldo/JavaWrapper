@@ -2,6 +2,7 @@ package Application;
 
 import Application.Database.DatabaseManager;
 
+
 import javax.swing.filechooser.FileSystemView;
 import java.io.*;
 
@@ -13,9 +14,15 @@ public class Settings {
     public static final String SEP = "\\";
     public static final String CSV = ".csv";
     public static final String EXE = ".exe";
-    public static  final String  SCREENREC_OUTFILE         = "screenRec.mp4";
-    public static  final String  MOUSEMONITTOR_OUTFILE     = "mouseStats.csv";
-    public static  final String  SCREENSHOTFILE     = "screenshotSoluzione.png";
+    public static final String TXT = ".txt";
+    public static final String PNG = ".png";
+    public static final String SCRATCH_EXT = ".sb2";
+
+    public static  final String  SCREENREC_REPORT_FILE      = "registrazSchermo.mp4";
+    public static  final String  MOUSEMONITTOR_REPORTDIR    = "DatiMouse";
+    public static  final String  MOUSEMONITTOR_REPORT_FILE  = "datiMouse.csv";
+    public static  final String  SCREENSHOTFILE             = "screenshotSoluzione.png";
+
 
 
     public static final String ROOT_DIR = FileSystemView.getFileSystemView().getDefaultDirectory()+SEP+"ScratchTests";
@@ -38,16 +45,13 @@ public class Settings {
     public static String   MOUSEMONITOR_BACKUP_DIR =
             FileSystemView.getFileSystemView().getDefaultDirectory()+SEP+"UsageStats";        // "C:\\Users\\Anna Bonaldo\\Documents\\UsageStats\\";
 
-    //todo create get methods
-    public  static  String  SCREENREC_OUTPATH = "C:\\Users\\Anna Bonaldo\\Documents\\ScratchTests\\Database\\DatabaseProgetti\\test1\\prova.mp4";
-    public  static  String  MOUSEMONITTOR_OUTPATH;
 
     public static  int  MOUSEMONITTOR_MIN_TIMESPAN = 10;//Default value
     public static  int  MOUSEMONITTOR_SEC_TIMESPAN = 0; //Default value
 
     public static  int  SCREENREC_FR = 30 ;
     public static  int  SCREENREC_BUFFERSIZE = 100;
-    public static String SCHOOLID;
+    public static String SCHOOLID = "Scuola";
     // end todo ------------
 
 
@@ -64,12 +68,20 @@ public class Settings {
     static final String  TXT_SCREENREC_BUFFERSIZE = "SCREENREC_BUFFERSIZE";
     static final String  TXT_SCHOOLID = "SCHOOLID";
 
+    public static Boolean MOUSEMONITOR_ACTIVE = true;
+    public static Boolean SCREENREC_ACTIVE = true;
 
+    public static Boolean  MOUSEDATA_IMAGES = true;
+    public static Boolean  MOUSEDATA_REPORTS = true;
+
+    public static final String  TXT_MOUSEDATA_IMAGES    = "MOUSEDATA_IMAGES";
+    public static final String  TXT_MOUSEDATA_REPORTS   = "MOUSEDATA_REPORTS";
+    public static final String  TXT_MOUSEMONITOR_ACTIVE = "MOUSEMONITOR_ACTIVE";
+    public static final String  TXT_SCREENREC_ACTIVE    = "SCREENREC_ACTIVE";
 
 
     public static String  getStudentsListFile(String classID)
     {
-        System.out.println("CSV: "+ Path(DATABASE_CLASSES, classID)+SEP+classID+CSV);
        return Path(DATABASE_CLASSES, classID)+SEP+classID+CSV;
     }
 
@@ -103,10 +115,9 @@ public class Settings {
         String line = br.readLine();
         while (line != null) {
                 ParseLine(line);
-                System.out.println("parsing line: "+line);
                 line = br.readLine();
         }
-        System.out.println("end parsing");
+
        }
        catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -119,22 +130,20 @@ public class Settings {
     private static void ParseLine(String line)
     {
         // PATH PARAMETERS PARSING
-
-        System.out.println("settings line: "+line);
         if(line.contains(Settings.TXT_SCRATCH_EXE_FULLPATH)) {
             line = line.replace(Settings.TXT_SCRATCH_EXE_FULLPATH, "");
             parseExePath(line, TXT_SCRATCH_EXE_FULLPATH);
-            System.out.println(SCRATCH_FULLPATH+" "+SCRATCH_EXE);
+
         }
         else if(line.contains(Settings.TXT_MOUSEMONITOR_EXE_FULLPATH)) {
             line = line.replace(Settings.TXT_MOUSEMONITOR_EXE_FULLPATH, "");
             parseExePath(line, TXT_MOUSEMONITOR_EXE_FULLPATH);
-            System.out.println(MOUSEMONITOR_FULLPATH+" "+MOUSEMONITOR_EXE);
+
         }
         else if(line.contains(Settings.TXT_SCREENREC_EXE_FULLPATH)) {
             line = line.replace(Settings.TXT_SCREENREC_EXE_FULLPATH, "");
             parseExePath(line, TXT_SCREENREC_EXE_FULLPATH);
-            System.out.println(SCREENREC_FULLPATH+" "+SCREENREC_EXE);
+
         }
         else if(line.contains(Settings.TXT_MOUSEMONITOR_BACKUP_DIR)) {
             line = line.replace(Settings.TXT_MOUSEMONITOR_BACKUP_DIR, "");
@@ -162,6 +171,26 @@ public class Settings {
             line = line.replace(Settings.TXT_SCHOOLID, "");
             Settings.SCHOOLID = get_CleanValue(line);
         }
+        else if(line.contains(Settings.TXT_MOUSEMONITOR_ACTIVE))
+        {
+            line = line.replace(Settings.TXT_MOUSEMONITOR_ACTIVE, "");
+            MOUSEMONITOR_ACTIVE = parseBoolean(line);
+        }
+        else if(line.contains(Settings.TXT_SCREENREC_ACTIVE))
+        {
+            line = line.replace(Settings.TXT_SCREENREC_ACTIVE, "");
+            SCREENREC_ACTIVE = parseBoolean(line);
+        }
+        else if(line.contains(Settings.TXT_MOUSEDATA_REPORTS))
+        {
+            line = line.replace(Settings.TXT_MOUSEDATA_REPORTS, "");
+            MOUSEDATA_REPORTS = parseBoolean(line);
+        }
+        else if(line.contains(Settings.TXT_MOUSEDATA_IMAGES))
+        {
+            line = line.replace(Settings.TXT_MOUSEDATA_IMAGES, "");
+            MOUSEDATA_IMAGES = parseBoolean(line);
+        }
 
     }
 
@@ -171,7 +200,6 @@ public class Settings {
         s = s.substring(s.indexOf("=") + 1);
         s = s.substring(0, s.indexOf(";"));
         while(s.contains(" ")) s = s.replace(" ", "");
-       // System.out.println("+++"+s+"+++");
         return s;
     }
 
@@ -194,8 +222,6 @@ public class Settings {
             SCREENREC_EXE = exefilename; SCREENREC_FULLPATH = fullpath;
         }
 
-
-       // System.out.println("EXE FILENAME: " +exefilename+" | FULLPATH: "+fullpath);
     }
     private static void  parsePath(String line, String settings) {
         String s = line;
@@ -206,5 +232,11 @@ public class Settings {
             MOUSEMONITOR_BACKUP_DIR = file.getAbsolutePath();
     }
 
+    private static Boolean parseBoolean(String line){
+        String boolVal = get_CleanValue(line);
+        if( boolVal.contains("TRUE")  ||  boolVal.contains("true"))
+            return true;
+        else return false;
+    }
 
 }

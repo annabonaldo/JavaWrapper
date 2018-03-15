@@ -3,7 +3,9 @@ package Application.Database;
 import Application.Settings;
 
 import java.io.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -13,10 +15,8 @@ import java.util.Calendar;
 public class DatabaseManager {
 
     static DBSchoolClass schoolClass;
-    static int studentId = -1;
+    static int  studentId = -1;
     static File testProject;// = new File("C:\\Users\\Anna Bonaldo\\Documents\\ScratchTests\\Database\\DatabaseProgetti\\test1\\01.sb2");
-
-    static File reportDir;
 
 
     static public String ClassID() {
@@ -28,7 +28,6 @@ public class DatabaseManager {
     }
 
     static public void SetClass(String classFolder) {
-        System.out.println("classFolder " + classFolder);
         DatabaseManager.schoolClass = new DBSchoolClass(classFolder);
         DatabaseManager.studentId = -1;
     }
@@ -67,9 +66,8 @@ public class DatabaseManager {
         return studentId;
     }
 
-    public static File ReportDir() {
-        RefreshReportDir();
-        return reportDir;
+    public static File ReportDir(ReportWriter.REPORT report) {
+        return ReportWriter.GetReportPath(report);
     }
 
     public static String ReportId() {
@@ -80,17 +78,34 @@ public class DatabaseManager {
         studentId = -1;
         schoolClass = null;
         testProject = null;
-        reportDir = null;
     }
 
-    public static void RefreshReportDir() {
-        if (reportDir == null) {
-            String path = Settings.ClassPath() + Settings.SEP + ReportId();
-            reportDir = new File(path);
-            reportDir.mkdirs();
+    public static void ConfirmConfiguration(){
+        if(HasProject() && HasStudent() && HasClass()) {
+            ReportWriter.CreateReportFolder();
         }
-        Settings.SCREENREC_OUTPATH = reportDir.getAbsolutePath()
-                +Settings.SEP+Settings.SCREENREC_OUTFILE;
+        else {
+            System.err.println("Project == " + testProject);
+            System.err.println("Class == " + schoolClass._classID);
+            System.err.println("Student == " + studentId);
+        }
+
+    }
+
+
+    public static String getReportTxtFilename() {
+        File parent = new File(testProject.getParent());
+        String filename=  "REPORT_PROGETTO"+parent.getName()+testProject.getName()+"DATA"+ LocalDate.now().toString();
+        filename = filename.replace(Settings.SCRATCH_EXT, "");
+        filename=  filename.replace(".", "");
+        filename = filename +Settings.CSV;
+        int count = 0;
+        while(new File(filename).exists())
+        {
+            count++;
+            filename= filename+count;
+        }
+        return  filename;
     }
 }
 

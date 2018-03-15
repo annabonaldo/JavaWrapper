@@ -1,5 +1,6 @@
 package Application.GUI;
 
+import Application.App;
 import Application.Database.DatabaseManager;
 import Application.Settings;
 
@@ -53,7 +54,7 @@ public class TestConfiguration {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(chooseStudentList.getSelectedValue() != null) {
-                    DatabaseManager.SetStudentId(chooseStudentList.getAnchorSelectionIndex());
+                    DatabaseManager.SetStudentId(chooseStudentList.getAnchorSelectionIndex()+1);
                 }
                 UpdateBTNVisibility();
 
@@ -86,7 +87,7 @@ public class TestConfiguration {
             @Override
             public void actionPerformed(ActionEvent e) {
                 mainFrame.dispose();
-               GUITestManager.ShowSessionStartFrame();
+                App.ConfirmTestConfiguration();
             }
         });
 
@@ -122,13 +123,6 @@ public class TestConfiguration {
         boolean showChooseStudent = hasClass && hasProject && !hasStudent;
         boolean haveConfig = ( hasProject && hasClass && hasStudent);
 
-        if(hasProject){System.out.println("hasProject");}
-        if(hasClass)  {System.out.println("hasClass");}
-        if(hasStudent){System.out.println("hasStudent");}
-        if(showChooseProject){System.out.println("showChooseProject");}
-        if(showChooseClass){System.out.println("showChooseClass");}
-        if(showChooseStudent){System.out.println("showChooseStudent");}
-        if(haveConfig){System.out.println("haveConfig");}
 
 
         BTNchoooseStudent.setVisible(true);
@@ -149,12 +143,15 @@ public class TestConfiguration {
         else
         if(showChooseClass) {
             BTNchooseProject.setBackground(Color.GREEN);
+            BTNchooseProject.setForeground(Color.BLACK);
             BTNchooseClass.setBackground(Color.LIGHT_GRAY);
             BTNchoooseStudent.setBackground(Color.LIGHT_GRAY);
         }
         else if(showChooseStudent){
             BTNchooseProject.setBackground(Color.GREEN);
             BTNchooseClass.setBackground(Color.GREEN);
+            BTNchooseProject.setForeground(Color.BLACK);
+            BTNchooseClass.setForeground(Color.BLACK);
             BTNchoooseStudent.setBackground(Color.LIGHT_GRAY);
         }
         else
@@ -162,6 +159,9 @@ public class TestConfiguration {
             BTNchooseProject.setBackground(Color.GREEN);
             BTNchooseClass.setBackground(Color.GREEN);
             BTNchoooseStudent.setBackground(Color.GREEN);
+            BTNchooseProject.setForeground(Color.BLACK);
+            BTNchooseClass.setForeground(Color.BLACK);
+            BTNchoooseStudent.setForeground(Color.BLACK);
         }
         chooseProjectPanel.setVisible(showChooseProject);
         chooseProjectTree.setVisible(showChooseProject);
@@ -188,7 +188,6 @@ public class TestConfiguration {
         File[] files = dir.listFiles();
         for (File file : files) {
             if (file.isDirectory()) {
-                System.out.println("directory:" + file.getAbsolutePath());
                 classesMAP.put(file.getName(), file.getAbsolutePath());
             }
         }
@@ -202,16 +201,9 @@ public class TestConfiguration {
     public void LoadStudentsList() {
 
         ArrayList<String> studentList = DatabaseManager.StudentsList();
-
-        System.out.println("TestConfiguration DBStudent List");
-        for(String student: studentList)
-            System.out.println("DBStudent: "+ student);
-
         DefaultListModel<String> model = new DefaultListModel<>();
         for (String student:studentList) { model.addElement(student); }
-
         chooseStudentList.setModel(model);
-
 
     }
 

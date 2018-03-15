@@ -1,6 +1,6 @@
 package Application.TestController;
-
 import Application.Database.DatabaseManager;
+import Application.Database.ReportWriter;
 import Application.Settings;
 
 import javax.imageio.ImageIO;
@@ -8,6 +8,10 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.DirectoryNotEmptyException;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.StandardCopyOption;
 
 enum PROCESS {
     SCRATCH_PROCESS,
@@ -15,8 +19,8 @@ enum PROCESS {
     MOUSEMONITOR_PROCESS
 }
 class ToolExecution implements Runnable{
-    PROCESS toolProcess;
 
+    PROCESS toolProcess;
     ToolExecution(PROCESS process){
         toolProcess = process;
     }
@@ -51,7 +55,6 @@ class ToolExecution implements Runnable{
 
     @Override
     public void run() {
-        System.out.println("THREAD in ");
         try {
             ToolExecution.StartProcess(toolProcess);
         } catch (IOException e) {
@@ -69,54 +72,48 @@ class ToolExecution implements Runnable{
 }
 public class ToolController
  {
-     static Thread mousemonitorExecution;
-     static Thread scratchExecution;
-     static Thread screenrecExecution;
-     static ToolExecution mousemonitorTool;
-     static ToolExecution scratchTool;
-     static ToolExecution screenrecTool;
-
-
+     static  ToolExecution mousemonitorTool;
+     static  ToolExecution scratchTool;
+     static  ToolExecution screenrecTool;
+     static  Thread mousemonitorExecution;
+     static  Thread scratchExecution;
+     static  Thread screenrecExecution;
      static  Process _Scratch;
      static  Process _MouseMonitor;
      static  Process _DesktopRecorderCMD;
 
-
      public static void Start(){
-         DatabaseManager.RefreshReportDir();
 
-       //  scratchTool = new ToolExecution(PROCESS.SCRATCH_PROCESS);
-       //  scratchExecution = new Thread(scratchTool);
-       //  scratchExecution.start();
+         scratchTool = new ToolExecution(PROCESS.SCRATCH_PROCESS);
+         scratchExecution = new Thread(scratchTool);
+         scratchExecution.start();
 
-         mousemonitorTool = new ToolExecution(PROCESS.MOUSEMONITOR_PROCESS);
-         mousemonitorExecution = new Thread(mousemonitorTool);
-         mousemonitorExecution.start();
+       if(Settings.MOUSEMONITOR_ACTIVE) {
+           mousemonitorTool = new ToolExecution(PROCESS.MOUSEMONITOR_PROCESS);
+           mousemonitorExecution = new Thread(mousemonitorTool);
+           mousemonitorExecution.start();
+       }
+         if(Settings.SCREENREC_ACTIVE) {
+                screenrecTool = new ToolExecution(PROCESS.SCREENREC_PROCESS);
+                screenrecExecution = new Thread(screenrecTool);
+               screenrecExecution.start();
+         }
 
-       //  screenrecTool = new ToolExecution(PROCESS.SCREENREC_PROCESS);
-       //  screenrecExecution = new Thread(screenrecTool);
-       //  screenrecExecution.start();
-
+         ExecutionTimerTool.Start();
      }
+     public static void Stop() {
 
-    public static void Stop() {
+         ReportWriter.TakeSolutionScreenshot();
+         ExecutionTimerTool.Stop();
+         ReportWriter.WriteReport();
 
-        try {
-            TakeSolutionScreenshot();
-        } catch (AWTException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        scratchTool.StopToolExecution();
+         if(Settings.MOUSEMONITOR_ACTIVE)  mousemonitorTool.StopToolExecution();
+         if(Settings.SCREENREC_ACTIVE)     screenrecTool.StopToolExecution();
 
-      //  scratchTool.StopToolExecution();
-          mousemonitorTool.StopToolExecution();
-     //   screenrecTool.StopToolExecution();
-
-      //  scratchExecution.interrupt()
-      // screenrecExecution.interrupt();
-        mousemonitorTool.StopToolExecution();
-        System.out.println("joined ");
+         scratchExecution.interrupt();
+         if(Settings.SCREENREC_ACTIVE)   screenrecExecution.interrupt();
+         if(Settings.MOUSEMONITOR_ACTIVE)  mousemonitorExecution.interrupt();
 
     }
 
@@ -132,22 +129,14 @@ public class ToolController
              CmdController.stop(_Scratch);
 
      }
-
      static void StartScreenRecorderProcess() throws IOException {
-      //   DatabaseManager.RefreshReportDir();
          String exe = Settings.SCREENREC_EXE;
-         String file = Settings.DATABASE+Settings.SEP+Settings.SCREENREC_OUTFILE;
+         String file = ReportWriter.GetReportPath(ReportWriter.REPORT.REPORT_SCREENREC).getAbsolutePath();
 
          String command = "ffmpeg -y -rtbufsize 100M -f gdigrab -framerate 30 " +
                          " -probesize 10M -draw_mouse 1 -i desktop -c:v libx264 -r 30 " +
                          "-preset ultrafast" +
                          " -tune zerolatency -crf 25 -pix_fmt yuv420p \""+file+"\"";
-        System.out.println(command);
-
-       /*  String command1 = "ffmpeg -y -rtbufsize 100M -f gdigrab -framerate 30 " +
-                         "-probesize 10M -draw_mouse 1 -i desktop -c:v libx264 -r 30 " +
-                         "-preset ultrafast" +
-                         " -tune zerolatency -crf 25 -pix_fmt yuv420p \"video output.mp4\"";*/
 
          _DesktopRecorderCMD = CmdController.startCmd();
          CmdController.cmdWrite(_DesktopRecorderCMD, command);
@@ -157,31 +146,26 @@ public class ToolController
          CmdController.cmdWrite(_DesktopRecorderCMD, command);
          CmdController.stop(_DesktopRecorderCMD);
      }
-
      static void StartMouseMonitorProcess() throws IOException {
-         String exe = Settings.MOUSEMONITOR_EXE;
-         String min = "min:"+Settings.MOUSEMONITTOR_MIN_TIMESPAN;
-         String sec = "sec:"+Settings.MOUSEMONITTOR_SEC_TIMESPAN;
-
-         _MouseMonitor = CmdController.start(exe, min, sec);
+         ReportWriter.CleanMouseMoinitorDirectory();
+         String min = " min:"+Settings.MOUSEMONITTOR_MIN_TIMESPAN;
+         String sec = " sec:"+Settings.MOUSEMONITTOR_SEC_TIMESPAN;
+         String command = Settings.MOUSEMONITOR_EXE+min+sec;
+         _MouseMonitor = CmdController.startCmd();
+         CmdController.cmdWrite(_MouseMonitor, command);
      }
-     static void EndMouseMonitorProcess() throws IOException {
-         CmdController.stop(_MouseMonitor);
-         CollectMouseMonitorResults();
+     static void EndMouseMonitorProcess()throws IOException {
+         String command = "taskkill /IM "+Settings.MOUSEMONITOR_EXE+Settings.EXE+ " /F";
+         CmdController.cmdWrite(_MouseMonitor, command);
+         CmdController.waitOnClose(command);
+         try {
+             Thread.sleep(3000);
+         } catch (InterruptedException e) {
+             e.printStackTrace();
+         }
+
+         ReportWriter.CollectMouseMonitorResults();
      }
 
 
-     private static void CollectMouseMonitorResults() {
-
-     }
-
-     public static void TakeSolutionScreenshot() throws AWTException, IOException {
-         //File reportDir =  DatabaseManager.ReportDir();
-         File reportDir = new File("C:\\Users\\Anna Bonaldo\\Documents\\ScratchTests\\Report");
-            System.out.println(reportDir.getAbsolutePath());
-         File screenShot = new File(reportDir+Settings.SEP+Settings.SCREENSHOTFILE);
-         System.out.println(screenShot.getAbsolutePath());
-         BufferedImage image = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
-         ImageIO.write(image, "png", screenShot);
-     }
  }

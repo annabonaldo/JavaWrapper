@@ -126,7 +126,7 @@ public class ToolController
      }
      }
      static void EndScratchProcess() throws IOException {
-             CmdController.stop(_Scratch);
+             CmdController.stop(_Scratch, Boolean.TRUE);
 
      }
      static void StartScreenRecorderProcess() throws IOException {
@@ -144,7 +144,7 @@ public class ToolController
      static void EndSreenRecorderProcess() throws IOException {
          String command = "q";
          CmdController.cmdWrite(_DesktopRecorderCMD, command);
-         CmdController.stop(_DesktopRecorderCMD);
+         CmdController.stop(_DesktopRecorderCMD, Boolean.FALSE);
      }
      static void StartMouseMonitorProcess() throws IOException {
          ReportWriter.CleanMouseMoinitorDirectory();

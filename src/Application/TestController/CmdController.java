@@ -5,6 +5,8 @@ import Application.Settings;
 import java.io.*;
 import java.util.Scanner;
 
+import static java.lang.Boolean.FALSE;
+
 public class CmdController {
     static final String CMD = "cmd.exe";
     public static  Boolean redirectCmdOut = false;
@@ -33,8 +35,12 @@ public class CmdController {
         return process;
     }
 
-    public static void stop(Process process) throws IOException {
+    public static void stop(Process process, Boolean forceEnd ) throws IOException {
         if(process!= null){ if (process.isAlive()) process.destroy();}
+        if(forceEnd) {
+            while (process.isAlive())
+                process.destroyForcibly();
+        }
     }
 
     public static void cmdWrite(Process cmd, String text) throws IOException {

@@ -22,7 +22,7 @@ public class Settings {
     public static  final String  MOUSEMONITTOR_REPORTDIR    = "DatiMouse";
     public static  final String  MOUSEMONITTOR_REPORT_FILE  = "datiMouse.csv";
     public static  final String  SCREENSHOTFILE             = "screenshotSoluzione.png";
-
+    public static  final String  CLASSDATAFILE              = "datiClasse";
 
 
     public static final String ROOT_DIR = FileSystemView.getFileSystemView().getDefaultDirectory()+SEP+"ScratchTests";
@@ -80,9 +80,15 @@ public class Settings {
     public static final String  TXT_SCREENREC_ACTIVE    = "SCREENREC_ACTIVE";
 
 
+
     public static String  getStudentsListFile(String classID)
     {
        return Path(DATABASE_CLASSES, classID)+SEP+classID+CSV;
+    }
+
+    public static String  getClassDataFile(String classID)
+    {
+        return Path(DATABASE_CLASSES, classID)+SEP+CLASSDATAFILE+CSV;
     }
 
     public static String ClassPath(String file)

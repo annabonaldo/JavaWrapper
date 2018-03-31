@@ -1,18 +1,9 @@
 package Application;
 
 import Application.Database.DatabaseManager;
-import Application.Database.ReportWriter;
 import Application.GUI.GUITestManager;
-import Application.GUI.TestSession;
 import Application.TestController.ToolController;
 
-import java.awt.*;
-import java.io.File;
-import java.io.IOException;
-
-/**
- * Created by Anna Bonaldo on 05/03/2018.
- */
 public class App {
 
     static void StartConfigurationUI() {

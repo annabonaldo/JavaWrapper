@@ -12,7 +12,12 @@ import java.nio.file.DirectoryNotEmptyException;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.StandardCopyOption;
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.temporal.TemporalField;
+import java.util.ArrayList;
 
 /**
  * Created by Anna Bonaldo on 14/03/2018.
@@ -33,7 +38,7 @@ public class ReportWriter {
         if (reportDir == null) {
             String path = Settings.REPORT+
                     Settings.SEP + DatabaseManager.ClassID()+
-                    Settings.SEP + "IdStudente"+DatabaseManager.StudentId();
+                    Settings.SEP + DatabaseManager.ReportId();
             reportDir = new File(path);
             reportDir.mkdirs();
         }
@@ -45,15 +50,24 @@ public class ReportWriter {
         try {
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
                 new FileOutputStream(GetReportPath(REPORT.REPORT_TXT)), "utf-8"));
-            writer.write("ID Studente ;"+ DatabaseManager.studentId+";");
-            writer.write("Classe  ;"+ DatabaseManager.schoolClass._classID+";");
-            writer.write("Gruppo Progetti ;"+new File(DatabaseManager.testProject.getParent()).getName() +";");
-            writer.write("Progetto ;"+DatabaseManager.testProject.getName() +";");
+            writer.write("ID Studente ;"+ DatabaseManager.studentId+" ;\n");
+            writer.write("Classe  ;"+ DatabaseManager.schoolClass._classID+";\n");
+            writer.write("Scuola  ;"+ Settings.SCHOOLID+";\n");
+            writer.write("Gruppo Progetti ;"+new File(DatabaseManager.testProject.getParent()).getName() +";\n");
+            writer.write("Progetto ;"+DatabaseManager.testProject.getName() +";\n");
 
-            writer.write("Data;"        + LocalDate.now().toString()+";");
-            writer.write("Ora Inizio ;" + ExecutionTimerTool.getStartInstant().toString()+";");
-            writer.write("Ora Fine ;" + ExecutionTimerTool.getStopInstant().toString()+";");
-            writer.write("Durata ;" + ExecutionTimerTool.getExcutionTime().toString()+";");
+            writer.write("Data;"        + LocalDate.now().toString()+";\n");
+            writer.write("Ora Inizio ;" + ExecutionTimerTool.getStartTime()+";\n");
+            writer.write("Ora Fine ;" + ExecutionTimerTool.getStopTime()+";\n");
+            writer.write("Durata ;" + ExecutionTimerTool.getExcutionTime().toString()+";\n");
+            ArrayList<String> studentData = DBSchoolClass.getStudentDataAt(DatabaseManager.StudentId());
+            if(studentData!= null && (!studentData.isEmpty()))
+            {
+                for (String data:studentData) {
+                    writer.write(data);
+                }
+            }
+            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

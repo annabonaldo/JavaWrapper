@@ -2,6 +2,7 @@ package Application.Database;
 
 import Application.Settings;
 
+import javax.xml.crypto.Data;
 import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -71,7 +72,13 @@ public class DatabaseManager {
     }
 
     public static String ReportId() {
-        return Settings.SCHOOLID + ClassID() + StudentId() + Project().getName() + LocalDateTime.now().toString();
+        String testDir = new File (DatabaseManager.testProject.getParent()).getName();
+        String id = "studente"+StudentId() +"_prog" +testDir+ Project().getName().replace(Settings.SCRATCH_EXT, "") +
+                "_data" + LocalDate.now().toString();
+        while(id.contains(".")) id=id.replace(".", "");
+        while(id.contains(":")) id=id.replace(":", "");
+        while(id.contains("-")) id=id.replace("-", "");
+        return id;
     }
 
     public static void ResetConfig() {

@@ -2,22 +2,20 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/Application/GUI/TestConfiguration.java" line="172" />
-    <bookmark url="file://$PROJECT_DIR$/src/Application/Settings.java" line="221" />
+    <bookmark url="file://$PROJECT_DIR$/src/Application/Settings.java" line="227" />
     <bookmark url="file://$PROJECT_DIR$/src/Application/TestController/ToolController.java" line="125" />
     <bookmark url="file://$PROJECT_DIR$/src/Application/TestController/ToolController.java" line="133" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be8ecf7d-d6fc-4da5-9e65-cdd6a313cb5f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/TestController/ExecutionTimerTool.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Database/DBStudent.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/App.java" afterPath="$PROJECT_DIR$/src/Application/App.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/Database/DBSchoolClass.java" afterPath="$PROJECT_DIR$/src/Application/Database/DBSchoolClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/Database/DatabaseManager.java" afterPath="$PROJECT_DIR$/src/Application/Database/DatabaseManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/GUI/GUITestManager.java" afterPath="$PROJECT_DIR$/src/Application/GUI/GUITestManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/GUI/TestConfiguration.java" afterPath="$PROJECT_DIR$/src/Application/GUI/TestConfiguration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/Database/ReportWriter.java" afterPath="$PROJECT_DIR$/src/Application/Database/ReportWriter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/Settings.java" afterPath="$PROJECT_DIR$/src/Application/Settings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/TestController/CmdController.java" afterPath="$PROJECT_DIR$/src/Application/TestController/CmdController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/TestController/ToolController.java" afterPath="$PROJECT_DIR$/src/Application/TestController/ToolController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/TestController/ExecutionTimerTool.java" afterPath="$PROJECT_DIR$/src/Application/TestController/ExecutionTimerTool.java" />
     </list>
     <ignored path="JavaWrapper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,11 +45,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ToolController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ToolController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application/TestController/ToolController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="90" column="29" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="38" />
               <folding>
                 <element signature="class#PROCESS#0" expanded="false" />
                 <element signature="method#StartProcess#0;class#ToolExecution#0" expanded="false" />
@@ -70,6 +68,7 @@
             <state relative-caret-position="968">
               <caret line="51" column="49" selection-start-line="51" selection-start-column="49" selection-end-line="51" selection-end-column="49" />
               <folding>
+                <element signature="imports" expanded="false" />
                 <element signature="method#startCmd#0;class#CmdController#0" expanded="false" />
                 <element signature="method#stop#0;class#CmdController#0" expanded="false" />
                 <marker date="1521120216234" expanded="false" signature="3722:3961" placeholder="{...}" />
@@ -78,12 +77,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExecutionTimerTool.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ExecutionTimerTool.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Application/TestController/ExecutionTimerTool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-              <folding />
+            <state relative-caret-position="219">
+              <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+              <folding>
+                <element signature="e#792#793#0" expanded="true" />
+                <element signature="e#824#825#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,14 +93,15 @@
       <file leaf-file-name="Settings.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application/Settings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="307">
+              <caret line="88" column="42" selection-start-line="88" selection-start-column="26" selection-end-line="88" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#readSettings#0;class#Settings#0" expanded="false" />
+                <element signature="method#ParseLine#0;class#Settings#0" expanded="false" />
                 <element signature="method#get_CleanValue#0;class#Settings#0" expanded="false" />
                 <element signature="method#parseExePath#0;class#Settings#0" expanded="false" />
                 <element signature="method#parsePath#0;class#Settings#0" expanded="false" />
-                <element signature="method#parseBoolean#0;class#Settings#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -107,9 +110,21 @@
       <file leaf-file-name="DatabaseManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application/Database/DatabaseManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="95" column="45" selection-start-line="95" selection-start-column="25" selection-end-line="95" selection-end-column="45" />
+            <state relative-caret-position="1122">
+              <caret line="79" column="25" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="25" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBSchoolClass.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Application/Database/DBSchoolClass.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="65">
+              <caret line="73" column="48" selection-start-line="73" selection-start-column="48" selection-end-line="73" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,11 +132,11 @@
       <file leaf-file-name="ReportWriter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application/Database/ReportWriter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4">
-              <caret line="30" column="42" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="42" />
+            <state relative-caret-position="77">
+              <caret line="58" column="76" selection-start-line="58" selection-start-column="76" selection-end-line="58" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#CreateReportFolder#0;class#ReportWriter#0" expanded="false" />
+                <element signature="method#GetReportPath#0;class#ReportWriter#0" expanded="false" />
                 <element signature="method#CollectMouseMonitorResults#0;class#ReportWriter#0" expanded="false" />
                 <element signature="method#CleanMouseMoinitorDirectory#0;class#ReportWriter#0" expanded="false" />
                 <element signature="method#TakeSolutionScreenshot#0;class#ReportWriter#0" expanded="false" />
@@ -151,28 +166,10 @@
       <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="23" column="27" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="27" />
+            <state relative-caret-position="374">
+              <caret line="29" column="30" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#main#0;class#App#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GUITestManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Application/GUI/GUITestManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="46" column="42" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="46" selection-end-column="42" />
-              <folding>
-                <element signature="e#535#536#0" expanded="true" />
-                <element signature="e#573#574#0" expanded="true" />
-                <element signature="method#showFrame#0;class#GUITestManager#0" expanded="false" />
-                <element signature="e#1154#1155#0" expanded="true" />
-                <element signature="e#1207#1208#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -198,7 +195,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/TestMonitor/MouseMonitor.java" />
         <option value="$PROJECT_DIR$/src/GUI/chooseStudent.form" />
         <option value="$PROJECT_DIR$/src/GUI/chooseClass.form" />
         <option value="$PROJECT_DIR$/src/TestMonitor/Settings.java" />
@@ -224,7 +220,6 @@
         <option value="$PROJECT_DIR$/src/GUI/TestSession.form" />
         <option value="$PROJECT_DIR$/src/GUI/TestSession.java" />
         <option value="$PROJECT_DIR$/src/Application/DatabaseManager.java" />
-        <option value="$PROJECT_DIR$/src/Application/Database/DBSchoolClass.java" />
         <option value="$PROJECT_DIR$/src/Application/SessionControl.java" />
         <option value="$PROJECT_DIR$/src/Application/TestController/ProcessController.java" />
         <option value="$PROJECT_DIR$/src/Application/GUI/TestSession.form" />
@@ -240,15 +235,17 @@
         <option value="$PROJECT_DIR$/src/Application/TestController/PROCESS.java" />
         <option value="$PROJECT_DIR$/src/Application/TestController/BasicTools.java" />
         <option value="$PROJECT_DIR$/src/Application/GUI/TestSession.java" />
-        <option value="$PROJECT_DIR$/src/Application/App.java" />
-        <option value="$PROJECT_DIR$/src/Application/Database/DatabaseManager.java" />
         <option value="$PROJECT_DIR$/src/Application/GUI/GUITestManager.java" />
         <option value="$PROJECT_DIR$/src/Application/GUI/TestConfiguration.java" />
         <option value="$PROJECT_DIR$/src/Application/TestController/CmdController.java" />
+        <option value="$PROJECT_DIR$/src/Application/TestController/ToolController.java" />
+        <option value="$PROJECT_DIR$/src/Application/Database/DatabaseManager.java" />
+        <option value="$PROJECT_DIR$/src/Application/App.java" />
+        <option value="$PROJECT_DIR$/src/Application/Database/DBStudent.java" />
         <option value="$PROJECT_DIR$/src/Application/Settings.java" />
+        <option value="$PROJECT_DIR$/src/Application/Database/DBSchoolClass.java" />
         <option value="$PROJECT_DIR$/src/Application/Database/ReportWriter.java" />
         <option value="$PROJECT_DIR$/src/Application/TestController/ExecutionTimerTool.java" />
-        <option value="$PROJECT_DIR$/src/Application/TestController/ToolController.java" />
       </list>
     </option>
   </component>
@@ -288,8 +285,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -358,102 +353,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="TestController" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ToolController.java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaWrapper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaWrapper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TestController" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaWrapper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaWrapper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TestSessionExecution" />
-              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaWrapper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaWrapper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaWrapper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaWrapper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -461,6 +360,8 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -984,12 +885,14 @@
       <workItem from="1521036461285" duration="2308000" />
       <workItem from="1521042174081" duration="9221000" />
       <workItem from="1521117544362" duration="5965000" />
-      <workItem from="1521123613371" duration="1178000" />
+      <workItem from="1521123613371" duration="1330000" />
+      <workItem from="1521125578650" duration="1448000" />
+      <workItem from="1522507078674" duration="5012000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139305000" />
+    <option name="totallyTimeSpent" value="145917000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1002,7 +905,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.4969743" order="6" side_tool="false" content_ui="tabs" />
@@ -1011,12 +914,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38325283" sideWeight="0.24508321" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38325283" sideWeight="0.7549168" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38969404" sideWeight="0.7549168" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.4969743" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20877458" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21482602" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3478261" sideWeight="0.4969743" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25189108" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1027,7 +931,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3478261" sideWeight="0.4969743" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1084,13 +987,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Application/Database/DatabaseManager.java</url>
-          <line>61</line>
-          <properties />
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Application/Database/DatabaseManager.java</url>
-          <line>104</line>
+          <line>111</line>
           <properties />
           <option name="timeStamp" value="77" />
         </line-breakpoint>
@@ -1107,7 +1004,7 @@
           <option name="timeStamp" value="80" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="81" />
+      <option name="time" value="82" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1127,13 +1024,6 @@
     <entry file="file://$PROJECT_DIR$/src/GUI/chooseStudentAlert.form" />
     <entry file="file://$PROJECT_DIR$/src/GUI/chooseStudentAlert.java" />
     <entry file="file://$PROJECT_DIR$/src/GUI/chooseClassAlert.form" />
-    <entry file="file://$PROJECT_DIR$/src/Application/Database/DBStudent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/chooseClassAlert.java" />
     <entry file="file://$PROJECT_DIR$/src/GUI/chooseClass.form" />
     <entry file="file://$PROJECT_DIR$/src/GUI/chooseStudent.java" />
@@ -1178,13 +1068,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/SessionControl.java" />
-    <entry file="file://$PROJECT_DIR$/src/Application/Database/DBSchoolClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-154">
-          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -1223,34 +1106,29 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/GUI/TestConfiguration.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/GUI/TestSessionExecution.form">
+      <provider editor-type-id="ui-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="ui-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/GUI/TestSessionExecution.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="29" column="65" selection-start-line="29" selection-start-column="65" selection-end-line="29" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#451#452#0" expanded="false" />
-            <element signature="e#489#490#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1266,7 +1144,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
           <caret line="703" column="30" selection-start-line="703" selection-start-column="30" selection-end-line="703" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1278,13 +1155,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/GUI/TestSession.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/String.java">
@@ -1327,11 +1204,11 @@
           <caret line="46" column="42" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="46" selection-end-column="42" />
           <folding>
-            <element signature="e#535#536#0" expanded="true" />
-            <element signature="e#573#574#0" expanded="true" />
+            <element signature="e#535#536#0" expanded="false" />
+            <element signature="e#573#574#0" expanded="false" />
             <element signature="method#showFrame#0;class#GUITestManager#0" expanded="false" />
-            <element signature="e#1154#1155#0" expanded="true" />
-            <element signature="e#1207#1208#0" expanded="true" />
+            <element signature="e#1154#1155#0" expanded="false" />
+            <element signature="e#1207#1208#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1356,6 +1233,7 @@
         <state relative-caret-position="968">
           <caret line="51" column="49" selection-start-line="51" selection-start-column="49" selection-end-line="51" selection-end-column="49" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="method#startCmd#0;class#CmdController#0" expanded="false" />
             <element signature="method#stop#0;class#CmdController#0" expanded="false" />
             <marker date="1521120216234" expanded="false" signature="3722:3961" placeholder="{...}" />
@@ -1370,46 +1248,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/Database/DatabaseManager.java">
+    <entry file="file://$PROJECT_DIR$/src/Application/TestController/ToolController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="95" column="45" selection-start-line="95" selection-start-column="25" selection-end-line="95" selection-end-column="45" />
-          <folding />
+        <state relative-caret-position="135">
+          <caret line="90" column="29" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="38" />
+          <folding>
+            <element signature="class#PROCESS#0" expanded="false" />
+            <element signature="method#StartProcess#0;class#ToolExecution#0" expanded="false" />
+            <element signature="method#run#0;class#ToolExecution#0" expanded="false" />
+            <element signature="method#StopToolExecution#0;class#ToolExecution#0" expanded="false" />
+            <element signature="method#StartScreenRecorderProcess#0;class#ToolController#0" expanded="false" />
+            <element signature="method#StartMouseMonitorProcess#0;class#ToolController#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/Settings.java">
+    <entry file="file://$PROJECT_DIR$/src/Application/Database/DBStudent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#get_CleanValue#0;class#Settings#0" expanded="false" />
-            <element signature="method#parseExePath#0;class#Settings#0" expanded="false" />
-            <element signature="method#parsePath#0;class#Settings#0" expanded="false" />
-            <element signature="method#parseBoolean#0;class#Settings#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="352">
+          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="23" column="27" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="27" />
+        <state relative-caret-position="374">
+          <caret line="29" column="30" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#App#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="88" column="42" selection-start-line="88" selection-start-column="26" selection-end-line="88" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#readSettings#0;class#Settings#0" expanded="false" />
+            <element signature="method#ParseLine#0;class#Settings#0" expanded="false" />
+            <element signature="method#get_CleanValue#0;class#Settings#0" expanded="false" />
+            <element signature="method#parseExePath#0;class#Settings#0" expanded="false" />
+            <element signature="method#parsePath#0;class#Settings#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/Database/DatabaseManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="79" column="25" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/Database/DBSchoolClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="73" column="48" selection-start-line="73" selection-start-column="48" selection-end-line="73" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/Database/ReportWriter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="30" column="42" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="42" />
+        <state relative-caret-position="77">
+          <caret line="58" column="76" selection-start-line="58" selection-start-column="76" selection-end-line="58" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#CreateReportFolder#0;class#ReportWriter#0" expanded="false" />
+            <element signature="method#GetReportPath#0;class#ReportWriter#0" expanded="false" />
             <element signature="method#CollectMouseMonitorResults#0;class#ReportWriter#0" expanded="false" />
             <element signature="method#CleanMouseMoinitorDirectory#0;class#ReportWriter#0" expanded="false" />
             <element signature="method#TakeSolutionScreenshot#0;class#ReportWriter#0" expanded="false" />
@@ -1420,23 +1331,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/TestController/ExecutionTimerTool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/TestController/ToolController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+        <state relative-caret-position="219">
+          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
           <folding>
-            <element signature="class#PROCESS#0" expanded="false" />
-            <element signature="method#StartProcess#0;class#ToolExecution#0" expanded="false" />
-            <element signature="method#run#0;class#ToolExecution#0" expanded="false" />
-            <element signature="method#StopToolExecution#0;class#ToolExecution#0" expanded="false" />
-            <element signature="method#StartScreenRecorderProcess#0;class#ToolController#0" expanded="false" />
-            <element signature="method#StartMouseMonitorProcess#0;class#ToolController#0" expanded="false" />
+            <element signature="e#792#793#0" expanded="true" />
+            <element signature="e#824#825#0" expanded="true" />
           </folding>
         </state>
       </provider>

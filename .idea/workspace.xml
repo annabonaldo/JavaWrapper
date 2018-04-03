@@ -8,9 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be8ecf7d-d6fc-4da5-9e65-cdd6a313cb5f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/prova.mov" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ExternalApp.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/video output.mp4" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/TestController/CmdController.java" afterPath="$PROJECT_DIR$/src/Application/TestController/CmdController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/TestController/ToolController.java" afterPath="$PROJECT_DIR$/src/Application/TestController/ToolController.java" />
     </list>
     <ignored path="JavaWrapper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,11 +41,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ToolController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ToolController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application/TestController/ToolController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-155">
-              <caret line="130" column="6" selection-start-line="130" selection-start-column="6" selection-end-line="130" selection-end-column="6" />
+            <state relative-caret-position="528">
+              <caret line="171" column="0" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
               <folding>
                 <element signature="class#PROCESS#0" expanded="false" />
                 <element signature="method#StartProcess#0;class#ToolExecution#0" expanded="false" />
@@ -57,18 +58,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CmdController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CmdController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Application/TestController/CmdController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+            <state relative-caret-position="447">
+              <caret line="91" column="1" selection-start-line="91" selection-start-column="1" selection-end-line="91" selection-end-column="1" />
               <folding>
                 <element signature="method#startCmd#0;class#CmdController#0" expanded="false" />
                 <element signature="method#start#0;class#CmdController#0" expanded="false" />
                 <element signature="method#start#1;class#CmdController#0" expanded="false" />
                 <element signature="method#cmdWrite#0;class#CmdController#0" expanded="false" />
                 <element signature="method#waitOnClose#0;class#CmdController#0" expanded="false" />
-                <marker date="1522512633140" expanded="false" signature="3895:4134" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -77,7 +77,7 @@
       <file leaf-file-name="ExecutionTimerTool.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application/TestController/ExecutionTimerTool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
+            <state relative-caret-position="484">
               <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
               <folding />
             </state>
@@ -160,7 +160,7 @@
       <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="506">
               <caret line="29" column="30" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -172,7 +172,7 @@
       <file leaf-file-name="endTestSessionCheck.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application/GUI/endTestSessionCheck.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-103">
+            <state relative-caret-position="704">
               <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
               <folding />
             </state>
@@ -248,8 +248,8 @@
         <option value="$PROJECT_DIR$/src/Application/Database/DBSchoolClass.java" />
         <option value="$PROJECT_DIR$/src/Application/Database/ReportWriter.java" />
         <option value="$PROJECT_DIR$/src/Application/TestController/ExecutionTimerTool.java" />
-        <option value="$PROJECT_DIR$/src/Application/TestController/CmdController.java" />
         <option value="$PROJECT_DIR$/src/Application/TestController/ToolController.java" />
+        <option value="$PROJECT_DIR$/src/Application/TestController/CmdController.java" />
       </list>
     </option>
   </component>
@@ -289,7 +289,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -434,8 +435,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -963,11 +963,12 @@
       <workItem from="1521125578650" duration="1448000" />
       <workItem from="1522507078674" duration="5012000" />
       <workItem from="1522512361879" duration="357000" />
+      <workItem from="1522739453065" duration="80000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146274000" />
+    <option name="totallyTimeSpent" value="146354000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -980,32 +981,32 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.4969743" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36876008" sideWeight="0.45839638" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38325283" sideWeight="0.24508321" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38969404" sideWeight="0.7549168" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.4969743" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21785174" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22087745" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3478261" sideWeight="0.4969743" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25189108" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3993559" sideWeight="0.4969743" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36876008" sideWeight="0.45839638" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38969404" sideWeight="0.7549168" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3478261" sideWeight="0.4969743" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3993559" sideWeight="0.4969743" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1353,7 +1354,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/TestController/ExecutionTimerTool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="484">
           <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
           <folding />
         </state>
@@ -1361,7 +1362,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="506">
           <caret line="29" column="30" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1371,31 +1372,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/GUI/endTestSessionCheck.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-103">
+        <state relative-caret-position="704">
           <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/TestController/CmdController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
-          <folding>
-            <element signature="method#startCmd#0;class#CmdController#0" expanded="false" />
-            <element signature="method#start#0;class#CmdController#0" expanded="false" />
-            <element signature="method#start#1;class#CmdController#0" expanded="false" />
-            <element signature="method#cmdWrite#0;class#CmdController#0" expanded="false" />
-            <element signature="method#waitOnClose#0;class#CmdController#0" expanded="false" />
-            <marker date="1522512633140" expanded="false" signature="3895:4134" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/TestController/ToolController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-155">
-          <caret line="130" column="6" selection-start-line="130" selection-start-column="6" selection-end-line="130" selection-end-column="6" />
+        <state relative-caret-position="528">
+          <caret line="171" column="0" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
           <folding>
             <element signature="class#PROCESS#0" expanded="false" />
             <element signature="method#StartProcess#0;class#ToolExecution#0" expanded="false" />
@@ -1403,6 +1389,20 @@
             <element signature="method#StopToolExecution#0;class#ToolExecution#0" expanded="false" />
             <element signature="method#StartScreenRecorderProcess#0;class#ToolController#0" expanded="false" />
             <element signature="method#StartMouseMonitorProcess#0;class#ToolController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/TestController/CmdController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="91" column="1" selection-start-line="91" selection-start-column="1" selection-end-line="91" selection-end-column="1" />
+          <folding>
+            <element signature="method#startCmd#0;class#CmdController#0" expanded="false" />
+            <element signature="method#start#0;class#CmdController#0" expanded="false" />
+            <element signature="method#start#1;class#CmdController#0" expanded="false" />
+            <element signature="method#cmdWrite#0;class#CmdController#0" expanded="false" />
+            <element signature="method#waitOnClose#0;class#CmdController#0" expanded="false" />
           </folding>
         </state>
       </provider>

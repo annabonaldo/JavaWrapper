@@ -25,7 +25,6 @@ public class DBSchoolClass {
     {
         try {
             String filename = Settings.getStudentsListFile(this._classID);
-            System.out.println(filename);
 
             FileReader fileReader = new FileReader(filename);
             BufferedReader br = new BufferedReader(fileReader);
@@ -46,7 +45,6 @@ public class DBSchoolClass {
 
     public void ReadStudentsData() {
         try {
-            System.out.println("read student data");
             String filename = Settings.getClassDataFile(this._classID);
             FileReader fileReader = new FileReader(filename);
             if(new File(filename).exists()) {
@@ -54,7 +52,6 @@ public class DBSchoolClass {
                 String line = br.readLine();
                 line= br.readLine();// skip header line
                while(line != null)  {
-                   System.out.println(line);
                    classData.add(line);
                    line = br.readLine();
 
@@ -77,7 +74,6 @@ public class DBSchoolClass {
               try{
                   String h = ";";
                   if(header.length > d) h = header[d]+h;
-
                   out.add(h+data[d]+";\n");
                   }
               catch (Exception e){

@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.event.*;
 
 /**
- * GUI for terminating test during session execution. 
+ * GUI for terminating test during session execution.
  */
 public class TestSessionExecution extends JDialog {
     private JPanel contentPane;

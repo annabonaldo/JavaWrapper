@@ -1,15 +1,10 @@
 package Application.GUI;
-
-import Application.App;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static com.sun.deploy.uitoolkit.ToolkitStore.dispose;
-
 /**
- * GUI to start test session.
+ * GUI to end session during test execution.
  */
 public class TestSession {
     private JButton BTNesci;

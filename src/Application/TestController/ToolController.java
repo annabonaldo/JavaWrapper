@@ -18,6 +18,10 @@ enum PROCESS {
     SCREENREC_PROCESS,
     MOUSEMONITOR_PROCESS
 }
+
+/**
+ * Class that contains a tool process execution.
+ */
 class ToolExecution implements Runnable{
 
     PROCESS toolProcess;
@@ -53,6 +57,9 @@ class ToolExecution implements Runnable{
         }
     }
 
+    /**
+     * Runs tool execution
+     */
     @Override
     public void run() {
         try {
@@ -62,6 +69,9 @@ class ToolExecution implements Runnable{
         }
     }
 
+    /**
+     * Stops tool execution
+     */
     public void StopToolExecution(){
         try {
           ToolExecution.EndProcess(toolProcess);
@@ -70,6 +80,10 @@ class ToolExecution implements Runnable{
         }
     }
 }
+
+/**
+ * Class to manage all session monitoring tools.
+ */
 public class ToolController
  {
      static  ToolExecution mousemonitorTool;
@@ -82,6 +96,9 @@ public class ToolController
      static  Process _MouseMonitor;
      static  Process _DesktopRecorderCMD;
 
+     /**
+      * To start tool controller.
+      */
      public static void Start(){
 
          scratchTool = new ToolExecution(PROCESS.SCRATCH_PROCESS);
@@ -101,6 +118,9 @@ public class ToolController
 
          ExecutionTimerTool.Start();
      }
+     /**
+      * To stop tool controller.
+      */
      public static void Stop() {
 
          ReportWriter.TakeSolutionScreenshot();

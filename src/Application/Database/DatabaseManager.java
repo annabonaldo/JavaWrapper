@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 /**
- * Created by Anna Bonaldo on 22/02/2018.
+ * Manage information loading from set database folder.
  */
 public class DatabaseManager {
 
@@ -20,57 +20,98 @@ public class DatabaseManager {
     static File testProject;// = new File("C:\\Users\\Anna Bonaldo\\Documents\\ScratchTests\\Database\\DatabaseProgetti\\test1\\01.sb2");
 
 
+    /**
+     * Class id for current class. It works only after execution configuration.
+     * @return Current Class ID.
+     */
     static public String ClassID() {
         return schoolClass._classID;
     }
 
+    /**
+     * Student class list  current class. It works only after execution configuration.
+     * @return Current student list.
+     */
     static public ArrayList<String> StudentsList() {
         return schoolClass.Students();
     }
-
+    /**
+     * Set actual class folder.
+     */
     static public void SetClass(String classFolder) {
         DatabaseManager.schoolClass = new DBSchoolClass(classFolder);
         DatabaseManager.studentId = -1;
     }
 
+    /**
+     * Set current execution project.
+     * @param testFolder Project folder.
+     * @param project Project name.
+     */
     static public void SetProject(String testFolder, String project) {
         ResetConfig();
         String fullPath = Settings.DATABASE_PROJECTS + Settings.SEP + testFolder + Settings.SEP + project;
         DatabaseManager.testProject = new File(fullPath);
     }
 
+    /**
+     * Set current student id in execution database data.
+     * @param id Student id.
+     */
     static public void SetStudentId(int id) {
         DatabaseManager.studentId = id;
     }
 
+    /**
+     * @return true if school class has been set.
+     */
     public static boolean HasClass() {
         return (schoolClass != null) && (schoolClass._classID != null);
     }
 
+    /**
+     * @return true if student id has been set.
+     */
     public static boolean HasStudent() {
         return (studentId >= 0);
     }
 
+    /**
+     * @return true if execution project has been set.
+     */
     public static boolean HasProject() {
         return (testProject != null) && (testProject.exists());
     }
 
+    /**
+     *
+     * @return Current execution project file.
+     */
     public static File Project() {
         return testProject;
     }
+
+    /**
+     *
+     * @return current class id.
+     */
 
     public static String Class() {
         return schoolClass._classID;
     }
 
+    /**
+     *
+     * @return Current student id.
+     */
     public static Integer StudentId() {
         return studentId;
     }
 
-    public static File ReportDir(ReportWriter.REPORT report) {
-        return ReportWriter.GetReportPath(report);
-    }
-
+    /**
+     *
+     * @return report file name identifier.
+     */
     public static String ReportId() {
         String testDir = new File (DatabaseManager.testProject.getParent()).getName();
         String id = "studente"+StudentId() +"_prog" +testDir+ Project().getName().replace(Settings.SCRATCH_EXT, "") +
@@ -81,12 +122,18 @@ public class DatabaseManager {
         return id;
     }
 
+    /**
+     * Resets configurations.
+     */
     public static void ResetConfig() {
         studentId = -1;
         schoolClass = null;
         testProject = null;
     }
 
+    /**
+     * Confirm actual configuration.
+     */
     public static void ConfirmConfiguration(){
         if(HasProject() && HasStudent() && HasClass()) {
             ReportWriter.CreateReportFolder();
@@ -99,8 +146,12 @@ public class DatabaseManager {
 
     }
 
+    /**
+     *
+     * @return Actual execution report filename.
+     */
 
-    public static String getReportTxtFilename() {
+    public static String getReportFilename() {
         File parent = new File(testProject.getParent());
         String filename=  "REPORT_PROGETTO"+parent.getName()+testProject.getName()+"DATA"+ LocalDate.now().toString();
         filename = filename.replace(Settings.SCRATCH_EXT, "");

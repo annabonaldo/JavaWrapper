@@ -7,50 +7,137 @@ import javax.swing.filechooser.FileSystemView;
 import java.io.*;
 
 /**
- * Created by Anna Bonaldo on 15/01/2018.
+ * This class loads and stores all program settings form "Settings.txt" file.
  */
 public class Settings {
 
+    /**
+    Utility variable: Path separator.
+     **/
     public static final String SEP = "\\";
+    /**
+     Utility variable: "csv" file extension.
+     **/
     public static final String CSV = ".csv";
+    /**
+     Utility variable: "exe" file extension.
+     **/
     public static final String EXE = ".exe";
+    /**
+     Utility variable: "txt" file extension.
+     **/
     public static final String TXT = ".txt";
+    /**
+     Utility variable: "png" file extension.
+     **/
     public static final String PNG = ".png";
+    /**
+     Utility variable: "sb2" (Scratch project) file extension.
+     **/
     public static final String SCRATCH_EXT = ".sb2";
-
+    /**
+     Settings variable: screen recorder report file's name.
+     **/
     public static  final String  SCREENREC_REPORT_FILE      = "registrazSchermo.mp4";
+    /**
+     Settings variable: mouse monitor report directory's name.
+     **/
     public static  final String  MOUSEMONITTOR_REPORTDIR    = "DatiMouse";
+    /**
+     Settings variable: mouse monitor report file's name.
+     **/
     public static  final String  MOUSEMONITTOR_REPORT_FILE  = "datiMouse.csv";
+    /**
+     Settings variable: solution screenshot file's name.
+     **/
     public static  final String  SCREENSHOTFILE             = "screenshotSoluzione.png";
+    /**
+     Settings variable: database class's file name.
+     **/
     public static  final String  CLASSDATAFILE              = "datiClasse";
 
 
+    /**
+     Settings variable: root databse directory path.
+     **/
     public static final String ROOT_DIR = FileSystemView.getFileSystemView().getDefaultDirectory()+SEP+"ScratchTests";
+    /**
+     Settings variable: classes database path from root directory.
+     **/
     public static final String DATABASE_CLASSES  = ROOT_DIR+SEP+"Database\\DatabaseClassi";
+    /**
+     Settings variable: projects database path from root directory.
+     **/
     public static final String DATABASE_PROJECTS = ROOT_DIR+SEP+"Database\\DatabaseProgetti";
+    /**
+     Settings variable: database folder path from root directory.
+     **/
     public static final String DATABASE          = ROOT_DIR+SEP+"Database";
+    /**
+     Settings variable: reports folder path from root directory.
+     **/
     public static final String REPORT            = ROOT_DIR+SEP+"Report";
+    /**
+     Settings variable: settings file path from root directory.
+     **/
     public static final String SETTINGS_FILE     = ROOT_DIR+SEP+"Settings.txt";
 
 
 
+    /**
+     External Application: name of Scratch executable.
+     **/
     public static  String  SCRATCH_EXE      = "Scratch 2"; //Default value
+    /**
+     External Application: name of mouse monirtor executable.
+     **/
     public static  String  MOUSEMONITOR_EXE = "UsageStats";//Default value
+    /**
+     External Application: name of screen recorder executable.
+     **/
     public static  String  SCREENREC_EXE    = "ffmpeg";    //Default value
 
 
+    /**
+     External Application MANDATORY INFORMATION: full path to Scratch executable.
+     **/
     public static  String  SCRATCH_FULLPATH;
+    /**
+     External Application MANDATORY INFORMATION: full path to mouse monitor executable.
+     **/
     public static  String  MOUSEMONITOR_FULLPATH;
+    /**
+     External Application MANDATORY INFORMATION: full path to screen recorder executable.
+     **/
     public static  String  SCREENREC_FULLPATH;
+    /**
+     External Application: full path to mouse monitor backup directory.
+     **/
     public static String   MOUSEMONITOR_BACKUP_DIR =
             FileSystemView.getFileSystemView().getDefaultDirectory()+SEP+"UsageStats";        // "C:\\Users\\Anna Bonaldo\\Documents\\UsageStats\\";
 
 
+    /**
+     External Application SETTINGS: mouse monitor report time-span (minutes)
+     **/
     public static  int  MOUSEMONITTOR_MIN_TIMESPAN = 10;//Default value
+    /**
+     External Application SETTINGS: mouse monitor report time-span (seconds)
+     **/
     public static  int  MOUSEMONITTOR_SEC_TIMESPAN = 0; //Default value
 
+    /**
+     External Application SETTINGS: screen recorder framerate.
+     **/
+
     public static  int  SCREENREC_FR = 30 ;
+    /**
+     External Application SETTINGS: screen recorder buffer size.
+     **/
     public static  int  SCREENREC_BUFFERSIZE = 100;
+    /**
+     Settings variable: school name. Used in generated report to refer to the current school.
+     **/
     public static String SCHOOLID = "Scuola";
     // end todo ------------
 
@@ -68,44 +155,75 @@ public class Settings {
     static final String  TXT_SCREENREC_BUFFERSIZE = "SCREENREC_BUFFERSIZE";
     static final String  TXT_SCHOOLID = "SCHOOLID";
 
+    /**
+     * Settings Current Value: contains mouse monitor activation status.
+     */
     public static Boolean MOUSEMONITOR_ACTIVE = true;
+    /**
+     * Settings Current Value: contains screen recorder activation status.
+     */
     public static Boolean SCREENREC_ACTIVE = true;
 
+    /**
+     * Settings Current Value: contains mouse monitor report images activation status.
+     */
     public static Boolean  MOUSEDATA_IMAGES = true;
+    /**
+     * Settings Current Value: contains mouse monitor report activation status.
+     */
     public static Boolean  MOUSEDATA_REPORTS = true;
 
+    /**
+     * Settings declaration TAG: to set mouse monitor records active with images.
+     */
     public static final String  TXT_MOUSEDATA_IMAGES    = "MOUSEDATA_IMAGES";
+    /**
+     * Settings declaration TAG: to set mouse monitor reports active.
+     */
     public static final String  TXT_MOUSEDATA_REPORTS   = "MOUSEDATA_REPORTS";
+    /**
+     * Settings declaration TAG: to set mouse monitor active.
+     */
     public static final String  TXT_MOUSEMONITOR_ACTIVE = "MOUSEMONITOR_ACTIVE";
+    /**
+     * Settings declaration TAG: to set screen recorder active.
+     */
     public static final String  TXT_SCREENREC_ACTIVE    = "SCREENREC_ACTIVE";
 
 
-
+    /**
+     * It returns the path to the file that contains the student list of class ideentified by classID.
+     * @param classID Class identifier.
+     * @return Path to student list file.
+     */
     public static String  getStudentsListFile(String classID)
     {
        return Path(DATABASE_CLASSES, classID)+SEP+classID+CSV;
     }
 
+    /**
+     * It returns the path to the file that contains all student information for class ideentified by classID.
+     * @param classID classID Class identifier.
+     * @return Path to students' information file
+     */
     public static String  getClassDataFile(String classID)
     {
         return Path(DATABASE_CLASSES, classID)+SEP+CLASSDATAFILE+CSV;
     }
 
-    public static String ClassPath(String file)
-    {
-        return ClassPath()+SEP+file;
-    }
-
-    public static String ClassPath()
-    {
-        return DATABASE_CLASSES+SEP+ DatabaseManager.ClassID();
-    }
-
+    /** Utility method to compose path
+     * @param dir Directory full path
+     * @param file File name in dir directory.
+     * @return The composed path to the file in dir directory.
+     */
     public static String Path(String dir, String file )
     {
         return dir+SEP+file;
     }
 
+    /**
+     * Launch settings file reading.
+     */
     public static void readSettings()
     {
        try {
@@ -133,6 +251,8 @@ public class Settings {
         }
     }
 
+
+    /** Private static utility methods**/
     private static void ParseLine(String line)
     {
         // PATH PARAMETERS PARSING

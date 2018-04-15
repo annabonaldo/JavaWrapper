@@ -7,6 +7,10 @@ import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ * This class manages class information loading from database. During execution it storages
+ * information on actual class and their students.
+ */
 public class DBSchoolClass {
     static String dataFileHeader= "ID;GENERE;ETA;NAZIONALITA;LIVELLO ITALIANO;";
     static private   ArrayList<String> classData = new ArrayList<>();
@@ -19,8 +23,14 @@ public class DBSchoolClass {
         ReadStudentsData();
     }
 
+    /**
+     * @return Current students list.
+     */
     public ArrayList<String> Students(){ return students; }
 
+    /**
+     * Reads current class data.
+     */
     public void ReadClass()
     {
         try {
@@ -43,6 +53,9 @@ public class DBSchoolClass {
 
     }
 
+    /**
+     * Reads current student data.
+     */
     public void ReadStudentsData() {
         try {
             String filename = Settings.getClassDataFile(this._classID);

@@ -3,12 +3,18 @@ package Application.GUI;
 import javax.swing.*;
 import java.awt.event.*;
 
+/**
+ * GUI to ask the user to confirm the end of current session.
+ */
 public class endTestSessionCheck extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
     static   private boolean endSession = false;
 
+    /**
+     * Terminates test session ending checks.
+     */
     public endTestSessionCheck() {
         setContentPane(contentPane);
         setModal(true);
@@ -58,12 +64,19 @@ public class endTestSessionCheck extends JDialog {
         this.dispose();
     }
 
+    /**
+     * Execute controls before session end.
+     */
     public static void CheckEndSession () {
         endTestSessionCheck dialog = new endTestSessionCheck();
         dialog.pack();
         dialog.setVisible(true);
     }
 
+    /**
+     * Checks session must be terminated.
+     * @return if true session is confirmed to be ended.
+     */
     public static boolean isEndSession() {
         return endSession;
     }

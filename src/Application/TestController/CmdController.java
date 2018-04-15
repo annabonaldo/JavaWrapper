@@ -9,12 +9,27 @@ import static java.lang.Boolean.FALSE;
 
 public class CmdController {
     static final String CMD = "cmd.exe";
+
+    /**
+     * If true command line output is redirected to program command line.
+     */
     public static Boolean redirectCmdOut = false;
 
+    /**
+     * Starts command line process.
+     * @return The command line started process.
+     * @throws IOException
+     */
     public static Process startCmd() throws IOException {
         return start(CMD);
     }
 
+    /**
+     * To start a process.
+     * @param processExe Process to start.
+     * @return The started process.
+     * @throws IOException
+     */
     public static Process start(String processExe) throws IOException {
         Process process = null;
         if (!processExe.isEmpty()) {
@@ -25,6 +40,14 @@ public class CmdController {
         return process;
     }
 
+    /**
+     * To start process.
+     * @param processExe Process to start.
+     * @param param1 Text parameters
+     * @param param2 Text parameters
+     * @return  It return the started process.
+     * @throws IOException
+     */
     public static Process start(String processExe, String param1, String param2) throws IOException {
         Process process = null;
         if (!processExe.isEmpty()) {
@@ -35,6 +58,12 @@ public class CmdController {
         return process;
     }
 
+    /**
+     * Stops process execution.
+     * @param process Process to end.
+     * @param forceEnd if true, forces process execution's end.
+     * @throws IOException
+     */
     public static void stop(Process process, Boolean forceEnd) throws IOException {
         if (process != null) {
             if (process.isAlive()) process.destroy();
@@ -45,6 +74,12 @@ public class CmdController {
         }
     }
 
+    /**
+     * To write on cmd console.
+     * @param cmd Cmd process.
+     * @param text Cmd text command line.
+     * @throws IOException
+     */
     public static void cmdWrite(Process cmd, String text) throws IOException {
         if (cmd != null) {
             BufferedWriter p_stdin =
@@ -64,6 +99,10 @@ public class CmdController {
         }
     }
 
+    /**
+     * Waits on console process till the command execution finishes.
+     * @param command Cmd text command.
+     */
     public static void waitOnClose(String command) {
         try {
             if (!command.isEmpty())

@@ -4,7 +4,6 @@ import Application.Settings;
 import Application.TestController.ExecutionTimerTool;
 
 import javax.imageio.ImageIO;
-import javax.xml.crypto.Data;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
@@ -12,15 +11,12 @@ import java.nio.file.DirectoryNotEmptyException;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.StandardCopyOption;
-import java.time.Instant;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.temporal.TemporalField;
 import java.util.ArrayList;
 
 /**
- * Created by Anna Bonaldo on 14/03/2018.
+ * This class exposes static utility methods to write reports in database
+ * at the end of session execution.
  */
 public class ReportWriter {
 
@@ -90,7 +86,7 @@ public class ReportWriter {
                 }
                 case REPORT_TXT: {
                     reportDestination = new File(reportDir.getAbsolutePath()+
-                            Settings.SEP+DatabaseManager.getReportTxtFilename());
+                            Settings.SEP+DatabaseManager.getReportFilename());
                     break;
                 }
                 case REPORT_SOLUTION_SCREENSHOT: {

@@ -7,25 +7,37 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by Anna Bonaldo on 05/03/2018.
+ * This class manages all GUI classes during session configuration and execution.
  */
 public class GUITestManager {
+    /**
+     * Show session configuration frame.
+     */
     public static void ShowConfigurationFrame(){
 
         TestConfiguration testConfiguration = new TestConfiguration();
         testConfiguration.Show();
     }
 
+    /**
+     * Shows frame the user can use to start the current session.
+     */
     public static void ShowSessionStartFrame(){
         TestSession session  = new TestSession();
         session.show();
     }
 
+    /**
+     * Launch start session command.
+     */
     static void StartSessionCommand()
     {
         App.StartTestSession();
     }
 
+    /**
+     * Starts session exection GUI.
+     */
     public static void StartSessionExecutionUI(){
         TestSessionExecution.Show();
     }
@@ -44,10 +56,16 @@ public class GUITestManager {
         frame.setVisible(true);
     }
 
+    /**
+     * Call for end session confirmation from the user.
+     */
     public static void CheckEndSessionCommand() {
         endTestSessionCheck.CheckEndSession();
     }
 
+    /**
+     * Launch end session command
+     */
     public static void EndSessionCommand() {
         CheckEndSessionCommand();
         if(endTestSessionCheck.isEndSession())
@@ -60,7 +78,4 @@ public class GUITestManager {
 
     }
 
-    public static void EndSessionCancelled() {
-        TestSessionExecution.Show();
-    }
 }

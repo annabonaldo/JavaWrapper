@@ -16,6 +16,9 @@ public class ExecutionTimerTool {
     static String startTime;
     static String endTime;
 
+    /**
+     * Starts execution timer.
+     */
     public static void  Start()
     {
         end = null;
@@ -23,16 +26,33 @@ public class ExecutionTimerTool {
         start = Instant.now();
         startTime = new SimpleDateFormat("HH.mm.ss").format(new Date());
     }
+    /**
+     * Stops execution timer.
+     */
     public static void  Stop() {
         endTime= new SimpleDateFormat("HH.mm.ss").format(new Date());
         end = Instant.now(); }
 
+
+    /**
+     * To get start execution timestamp.
+     * @return Start execution timestamp.
+     */
     public static String getStartTime()
     {
         return startTime;
     }
+
+    /**
+     * To get stop execution timestamp.
+     * @return Stop execution timestamp.
+     */
     public static String getStopTime()  { return  endTime; }
 
+    /**
+     * To get execution duration.
+     * @return Execution duration.
+     */
     public static Duration getExcutionTime(){
         return Duration.between(start, end);
     }

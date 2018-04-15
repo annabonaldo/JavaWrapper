@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by Anna Bonaldo on 05/03/2018.
+ * Test configuration GUI.
  */
 public class TestConfiguration {
 
@@ -112,6 +112,9 @@ public class TestConfiguration {
 
     }
 
+    /**
+     * Updates configuration active buttons.
+     */
     public void UpdateBTNVisibility() {
 
         boolean hasProject = DatabaseManager.HasProject();
@@ -179,6 +182,9 @@ public class TestConfiguration {
 
     }
 
+    /**
+     * Loads database classes.
+     */
     public void LoadClassList() {
 
         HashMap<String, String> classesMAP = new HashMap<>();
@@ -198,6 +204,9 @@ public class TestConfiguration {
 
     }
 
+    /**
+     * Loads student list for actual selected class.
+     */
     public void LoadStudentsList() {
 
         ArrayList<String> studentList = DatabaseManager.StudentsList();
@@ -207,6 +216,9 @@ public class TestConfiguration {
 
     }
 
+    /**
+     * Load available test sets in project's database.
+     */
     public void LoadProjectsList() {
         HashMap<String, String> projectsMAP = new HashMap<>();
 

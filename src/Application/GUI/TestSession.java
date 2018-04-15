@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 import static com.sun.deploy.uitoolkit.ToolkitStore.dispose;
 
 /**
- * Created by Anna Bonaldo on 12/03/2018.
+ * GUI to start test session.
  */
 public class TestSession {
     private JButton BTNesci;
@@ -42,6 +42,9 @@ public class TestSession {
         });
     }
 
+    /**
+     * Shows test starting session form.
+     */
     public  void show()
     {
         frame = new JFrame("Inizia Sessione di Test Scratch");

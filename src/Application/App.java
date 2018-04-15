@@ -4,6 +4,9 @@ import Application.Database.DatabaseManager;
 import Application.GUI.GUITestManager;
 import Application.TestController.ToolController;
 
+/**
+ * Main program class.
+ */
 public class App {
 
     static void StartConfigurationUI() {
@@ -25,6 +28,9 @@ public class App {
         GUITestManager.ShowSessionStartFrame();
     }
 
+    /** Main program method: It performs settings reading and launches ConfigurationUI window.
+     * @param args Command line input patameters. No command input parameters are used.
+     */
     public static void main(String args[]) {
      try{
          Settings.readSettings();

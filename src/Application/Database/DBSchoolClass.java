@@ -45,6 +45,7 @@ public class DBSchoolClass {
                 students.add(lineData[1]);
                 line = br.readLine();
             }
+            fileReader.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -67,11 +68,11 @@ public class DBSchoolClass {
                while(line != null)  {
                    classData.add(line);
                    line = br.readLine();
-
                }
             }
+            fileReader.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+           // e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
